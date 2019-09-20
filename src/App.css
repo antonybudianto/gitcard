@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  background: white;
 }
 
 .App-logo {
@@ -8,15 +8,71 @@
   pointer-events: none;
 }
 
+.App-p {
+  margin: 10px;
+  font-size: 14pt;
+}
+
+h1 {
+  margin: 10px;
+}
+
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App-content {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Card-section {
+  margin-bottom: 25px;
+  width: 50%;
+}
+
+.Card-header {
+  display: flex;
+  align-items: center;
+}
+
+.Card-subheader {
+  color: gray;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.Card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Card-img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.Card {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid gray;
+  border-radius: 2px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.Card > span > a {
+  color: darkslategrey;
 }
 
 .App-link {
