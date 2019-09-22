@@ -32,6 +32,12 @@ h1 {
   padding: 10px;
 }
 
+.App-footer {
+  margin-bottom: 30px;
+  font-size: 11pt;
+  color: gray;
+}
+
 .Search-input {
   padding: 10px;
   border: 1px solid lightblue;
@@ -141,6 +147,19 @@ h1 {
 
 .Card > span > a {
   color: darkslategrey;
+}
+
+.Tab {
+  padding: 20px 50px;
+  background-color: dimgrey;
+  color: white;
+  border-bottom: 1px solid dimgrey;
+  cursor: pointer;
+}
+
+.Tab.active {
+  background-color: lightslategray;
+  border-bottom: 2px solid #61dafb;
 }
 
 @media (max-width: 600px) {
