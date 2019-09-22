@@ -76,8 +76,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1>GitCard</h1>
-          <p className="App-p">GitHub statistics for fun</p>
-          <p className="App-p">Indonesia</p>
+          <p className="App-p">Discover Open-source dev from Indonesia</p>
         </header>
         <SearchView />
         <div className="App-content flex-wrap">

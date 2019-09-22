@@ -80,7 +80,7 @@ class SearchView extends Component {
           </div>
           {this.state.data !== null ? (
             <div className="Search-result-container">
-              <h3>Result for {this.state.username}:</h3>
+              <h3>Result for {this.state.data.username}:</h3>
               <div className="Search-result-summary flex-wrap align-center">
                 <a
                   role="img"
