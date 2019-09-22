@@ -10,8 +10,24 @@ class App extends Component {
     super(props);
 
     this.state = {
-      view: 'city'
+      view: 'city',
+      data: null
     };
+  }
+
+  componentDidMount() {
+    fetch('/api/gh/summary')
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Error fetch summary');
+        }
+        return res.json();
+      })
+      .then(res => {
+        this.setState({
+          data: res.data
+        });
+      });
   }
 
   handleChangeCity = () => {
@@ -50,8 +66,8 @@ class App extends Component {
             by City
           </div>
         </div>
-        <LangView display={this.state.view === 'lang'} />
-        <CityView display={this.state.view === 'city'} />
+        <LangView data={this.state.data} display={this.state.view === 'lang'} />
+        <CityView data={this.state.data} display={this.state.view === 'city'} />
         <footer className="App-content App-footer">
           <div>
             *GitHub API has rate limit, so if you get empty result, please

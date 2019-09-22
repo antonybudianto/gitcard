@@ -2,52 +2,20 @@ import React, { Component } from 'react';
 import CardSection from './CardSection';
 
 class LangView extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      topAllDevs: [],
-      topJsDevs: [],
-      topGoDevs: [],
-      topJavaDevs: [],
-      topPythonDevs: [],
-      topPhpDevs: []
-    };
-  }
-
-  componentDidMount() {
-    this.fetchGh('location=Indonesia&follower=>=500&language=*', 'topAllDevs');
-    this.fetchGh(
-      'location=Indonesia&follower=>=200&language=JavaScript',
-      'topJsDevs'
-    );
-    this.fetchGh(
-      'location=Indonesia&follower=>=200&language=Java',
-      'topJavaDevs'
-    );
-    this.fetchGh(
-      'location=Indonesia&follower=>=150&language=Python',
-      'topPythonDevs'
-    );
-    this.fetchGh('location=Indonesia&follower=>=100&language=Go', 'topGoDevs');
-  }
-
-  fetchGh = (query, field) => {
-    return fetch('/api/gh/top-users/?' + query)
-      .then(res => {
-        if (!res.ok) {
-          throw new Error('Error fetch');
-        }
-        return res.json();
-      })
-      .then(r => {
-        this.setState({
-          [field]: r.data.items || []
-        });
-      });
-  };
-
   render() {
+    let topAllDevs = [];
+    let topJsDevs = [];
+    let topPythonDevs = [];
+    let topJavaDevs = [];
+    let topGoDevs = [];
+    const { data } = this.props;
+    if (data !== null) {
+      topAllDevs = data.topAllDev.edges;
+      topJavaDevs = data.topJavaDev.edges;
+      topPythonDevs = data.topPythonDev.edges;
+      topJsDevs = data.topJsDev.edges;
+      topGoDevs = data.topGoDev.edges;
+    }
     return (
       <div
         style={{
@@ -58,27 +26,27 @@ class LangView extends Component {
           <CardSection
             header="Top popular overall"
             subheader=">= 500 followers"
-            items={this.state.topAllDevs}
+            items={topAllDevs}
           />
           <CardSection
             header="Top popular JavaScript dev"
             subheader=">= 200 followers"
-            items={this.state.topJsDevs}
+            items={topJsDevs}
           />
           <CardSection
             header="Top popular Java dev"
             subheader=">= 200 followers"
-            items={this.state.topJavaDevs}
+            items={topJavaDevs}
           />
           <CardSection
             header="Top popular Python dev"
             subheader=">= 150 followers"
-            items={this.state.topPythonDevs}
+            items={topPythonDevs}
           />
           <CardSection
             header="Top popular Go dev"
             subheader=">= 100 followers"
-            items={this.state.topGoDevs}
+            items={topGoDevs}
           />
         </div>
       </div>

@@ -96,6 +96,10 @@ h1 {
   flex-wrap: wrap;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .flex-half {
   width: 50%;
 }

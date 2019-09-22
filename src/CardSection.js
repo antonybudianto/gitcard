@@ -11,10 +11,19 @@ function CardSection({ header, subheader = '', items }) {
         {items.map((u, i) => {
           return (
             <div className="Card" key={i}>
-              <img src={u.avatar_url} alt={u.login} className="Card-img" />
-              <span>
-                <a href={`https://github.com/${u.login}`}>{u.login}</a>
-              </span>
+              <img
+                src={u.node.avatarUrl}
+                alt={u.node.login}
+                className="Card-img"
+              />
+              <div className="flex-wrap flex-col">
+                <span>
+                  <a href={`https://github.com/${u.node.login}`}>
+                    {u.node.login}
+                  </a>
+                </span>
+                <div>{u.node.followers.totalCount} followers</div>
+              </div>
             </div>
           );
         })}
