@@ -143,6 +143,31 @@ h1 {
   color: darkslategrey;
 }
 
+@media (max-width: 600px) {
+  .Card-section {
+    width: 100%;
+  }
+
+  .Card {
+    width: 40%;
+  }
+
+  .Search-result-container {
+    width: 100%;
+  }
+
+  .Search-result-summary {
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .Search-lang-container {
+    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .App-link {
   color: #61dafb;
 }

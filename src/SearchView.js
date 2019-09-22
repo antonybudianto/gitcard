@@ -16,15 +16,19 @@ class SearchView extends Component {
     });
   };
 
-  handleSearch = () => {
+  handleSearch = e => {
+    e.preventDefault();
+
     if (this.state.username === '') {
       return;
     }
+
     this.setState({
       loading: true,
       data: null,
       error: ''
     });
+
     fetch(`/api/gh/profile/${this.state.username}`)
       .then(res => {
         if (!res.ok) {
@@ -33,10 +37,16 @@ class SearchView extends Component {
         return res.json();
       })
       .then(res => {
-        console.log(res);
+        const langMap = res.data.language_map;
+        const langArr = Object.entries(langMap);
+        const sortedLangArr = langArr.sort((a, b) => b[1] - a[1]);
+        const newData = {
+          ...res.data,
+          langArr: sortedLangArr
+        };
         this.setState({
           loading: false,
-          data: res.data
+          data: newData
         });
       })
       .catch(e => {
@@ -54,31 +64,36 @@ class SearchView extends Component {
         <div className="App-content flex-wrap space-between">
           <div>
             <h3>Search username</h3>
-            <div className="flex-wrap">
-              <input
-                placeholder="Search username"
-                type="text"
-                className="Search-input"
-                onChange={e => this.handleChangeUsername(e.target.value)}
-              />
-              <button
-                disabled={this.state.loading}
-                onClick={this.handleSearch}
-                className="Search-btn"
-              >
-                Search
-              </button>
-            </div>
+            <form noValidate onSubmit={this.handleSearch}>
+              <div className="flex-wrap">
+                <input
+                  placeholder="Search username"
+                  type="text"
+                  className="Search-input"
+                  onChange={e => this.handleChangeUsername(e.target.value)}
+                />
+                <button disabled={this.state.loading} className="Search-btn">
+                  Search
+                </button>
+              </div>
+            </form>
           </div>
           {this.state.data !== null ? (
             <div className="Search-result-container">
               <h3>Result for {this.state.username}:</h3>
-              <div className="flex-wrap align-center">
-                <img
-                  className="Search-ava"
-                  src={this.state.data.avatar_url}
-                  alt={this.state.username}
-                />
+              <div className="Search-result-summary flex-wrap align-center">
+                <a
+                  role="img"
+                  rel="noopener noreferrer"
+                  aria-label="User Image"
+                  href={`https://github.com/${this.state.username}`}
+                >
+                  <img
+                    className="Search-ava"
+                    src={this.state.data.avatar_url}
+                    alt={this.state.username}
+                  />
+                </a>
                 <div className="Search-stat">
                   <div>
                     <span aria-label="image" role="img">
@@ -106,10 +121,10 @@ class SearchView extends Component {
                   </div>
                 </div>
                 <div className="Search-stat flex-wrap Search-lang-container">
-                  {Object.keys(this.state.data.language_map).map((k, i) => {
+                  {this.state.data.langArr.map((l, i) => {
                     return (
                       <div key={i} className="Search-lang-item">
-                        {k}: <span>{this.state.data.language_map[k]}</span>
+                        {l[0]}: <span>{l[1]}</span>
                       </div>
                     );
                   })}
@@ -118,7 +133,7 @@ class SearchView extends Component {
             </div>
           ) : (
             <div className="Search-result-container">
-              <h3>Find GitHub user total stars, subs, and others!</h3>
+              <h3>Find GitHub user total stars, repos, and others!</h3>
               {this.state.loading && <div>Loading data, please wait!</div>}
               {this.state.error && <div>{this.state.error}</div>}
             </div>
