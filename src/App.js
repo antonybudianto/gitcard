@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import SearchView from './SearchView';
 
 function CardSection({ header, subheader = '', items }) {
   return (
@@ -78,7 +79,8 @@ class App extends Component {
           <p className="App-p">GitHub statistics for fun</p>
           <p className="App-p">Indonesia</p>
         </header>
-        <div className="App-content">
+        <SearchView />
+        <div className="App-content flex-wrap">
           <CardSection
             header="Top popular dev"
             subheader=">= 500 followers"

@@ -30,8 +30,76 @@ h1 {
 
 .App-content {
   padding: 10px;
+}
+
+.Search-input {
+  padding: 10px;
+  border: 1px solid lightblue;
+  outline: none;
+}
+
+.Search-input:focus {
+  background-color: lightcyan;
+}
+
+.Search-btn {
+  background: white;
+  border: 1px solid gray;
+}
+
+.Search-btn:hover {
+  background: lightblue;
+}
+
+.Search-ava {
+  width: 100px;
+  height: 100px;
+}
+
+.Search-stat {
+  margin-left: 10px;
+}
+
+.Search-lang-container {
+  width: 400px;
+}
+
+.Search-lang-item {
+  background-color: #282c34;
+  color: white;
+  padding: 5px;
+  margin: 2px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.Search-lang-item > span {
+  font-weight: normal;
+}
+
+.Search-result-container {
+  width: 70%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
   display: flex;
   flex-wrap: wrap;
+}
+
+.flex-half {
+  width: 50%;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
 }
 
 .Card-section {
