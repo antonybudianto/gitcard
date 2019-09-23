@@ -10,15 +10,26 @@ class SearchView extends Component {
 
   componentDidMount() {}
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.selectedUser !== prevProps.selectedUser) {
+      this.setState(
+        {
+          username: this.props.selectedUser.node.login
+        },
+        () => {
+          this.doSearch();
+        }
+      );
+    }
+  }
+
   handleChangeUsername = text => {
     this.setState({
       username: text
     });
   };
 
-  handleSearch = e => {
-    e.preventDefault();
-
+  doSearch = () => {
     if (this.state.username === '') {
       return;
     }
@@ -58,6 +69,11 @@ class SearchView extends Component {
       });
   };
 
+  handleSearch = e => {
+    e.preventDefault();
+    this.doSearch();
+  };
+
   render() {
     return (
       <div>
@@ -70,6 +86,7 @@ class SearchView extends Component {
                   placeholder="Search username"
                   type="text"
                   className="Search-input"
+                  value={this.state.username}
                   onChange={e => this.handleChangeUsername(e.target.value)}
                 />
                 <button disabled={this.state.loading} className="Search-btn">

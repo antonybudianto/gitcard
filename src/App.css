@@ -17,6 +17,10 @@ h1 {
   margin: 10px;
 }
 
+.mt1 {
+  margin-top: 5px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 20vh;
@@ -108,8 +112,16 @@ h1 {
   align-items: center;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .space-between {
   justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
 }
 
 .Card-section {
@@ -134,9 +146,17 @@ h1 {
 }
 
 .Card-img {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   margin-right: 10px;
+}
+
+.Card-right {
+  width: 220px;
+}
+
+.Card-name {
+  font-size: 11pt;
 }
 
 .Card {
@@ -144,9 +164,19 @@ h1 {
   margin: 5px;
   border: 1px solid gray;
   border-radius: 2px;
-  width: 200px;
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
+}
+
+.Card:hover {
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+.Card-stat {
+  color: gray;
+  font-size: 10pt;
 }
 
 .Card > span > a {

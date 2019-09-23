@@ -11,7 +11,8 @@ class App extends Component {
 
     this.state = {
       view: 'city',
-      data: null
+      data: null,
+      selectedUser: null
     };
   }
 
@@ -42,6 +43,13 @@ class App extends Component {
     });
   };
 
+  handleClick = u => {
+    window.scrollTo(0, 0);
+    this.setState({
+      selectedUser: u
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -51,7 +59,7 @@ class App extends Component {
             Discover awesome Open-source dev from <strong>Indonesia</strong>
           </p>
         </header>
-        <SearchView />
+        <SearchView selectedUser={this.state.selectedUser} />
         <div className="App-content flex-wrap">
           <div
             className={'Tab ' + (this.state.view === 'lang' ? 'active' : '')}
@@ -66,8 +74,16 @@ class App extends Component {
             by City
           </div>
         </div>
-        <LangView data={this.state.data} display={this.state.view === 'lang'} />
-        <CityView data={this.state.data} display={this.state.view === 'city'} />
+        <LangView
+          onClick={this.handleClick}
+          data={this.state.data}
+          display={this.state.view === 'lang'}
+        />
+        <CityView
+          onClick={this.handleClick}
+          data={this.state.data}
+          display={this.state.view === 'city'}
+        />
         <footer className="App-content App-footer">
           <div>
             *GitHub API has rate limit, so if you get empty result, please

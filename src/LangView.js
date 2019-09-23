@@ -27,26 +27,31 @@ class LangView extends Component {
             header="Top popular overall"
             subheader=">= 500 followers"
             items={topAllDevs}
+            onClick={this.props.onClick}
           />
           <CardSection
             header="Top popular JavaScript dev"
             subheader=">= 200 followers"
             items={topJsDevs}
+            onClick={this.props.onClick}
           />
           <CardSection
             header="Top popular Java dev"
             subheader=">= 200 followers"
             items={topJavaDevs}
+            onClick={this.props.onClick}
           />
           <CardSection
             header="Top popular Python dev"
             subheader=">= 150 followers"
             items={topPythonDevs}
+            onClick={this.props.onClick}
           />
           <CardSection
             header="Top popular Go dev"
             subheader=">= 100 followers"
             items={topGoDevs}
+            onClick={this.props.onClick}
           />
         </div>
       </div>

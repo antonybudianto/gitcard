@@ -1,6 +1,12 @@
 import React from 'react';
 
-function CardSection({ header, subheader = '', items }) {
+function CardSection({
+  header,
+  subheader = '',
+  items,
+  showLocation = true,
+  onClick = () => {}
+}) {
   return (
     <section className="Card-section">
       <div className="Card-header">
@@ -10,19 +16,50 @@ function CardSection({ header, subheader = '', items }) {
       <div className="Card-container">
         {items.map((u, i) => {
           return (
-            <div className="Card" key={i}>
+            <div
+              className="Card"
+              key={i}
+              onClick={e => {
+                onClick(u);
+              }}
+            >
               <img
                 src={u.node.avatarUrl}
                 alt={u.node.login}
                 className="Card-img"
               />
-              <div className="flex-wrap flex-col">
-                <span>
-                  <a href={`https://github.com/${u.node.login}`}>
+              <div className="Card-right flex-wrap flex-col">
+                <div className="Card-name">
+                  {u.node.name} (
+                  <a
+                    onClick={e => {
+                      e.stopPropagation();
+                    }}
+                    href={`https://github.com/${u.node.login}`}
+                  >
                     {u.node.login}
                   </a>
-                </span>
-                <div>{u.node.followers.totalCount} followers</div>
+                  )
+                </div>
+                {showLocation && (
+                  <div
+                    style={{
+                      fontSize: '10pt'
+                    }}
+                  >
+                    {u.node.location}
+                  </div>
+                )}
+                <div className="flex Card-stat mt1 space-around">
+                  <div className="flex flex-col align-center">
+                    {' '}
+                    <strong>{u.node.followers.totalCount}</strong>followers
+                  </div>
+                  <div className="flex flex-col align-center">
+                    {' '}
+                    <strong>{u.node.following.totalCount}</strong>following
+                  </div>
+                </div>
               </div>
             </div>
           );

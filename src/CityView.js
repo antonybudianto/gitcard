@@ -23,24 +23,32 @@ class CityView extends Component {
       >
         <div className="App-content flex-wrap">
           <CardSection
+            showLocation={false}
             header="Top popular Jakarta dev"
             subheader=">= 300 followers"
             items={topJakartaDev}
+            onClick={this.props.onClick}
           />
           <CardSection
+            showLocation={false}
             header="Top popular Bandung dev"
             subheader=">= 200 followers"
             items={topBandungDev}
+            onClick={this.props.onClick}
           />
           <CardSection
+            showLocation={false}
             header="Top popular Yogyakarta dev"
             subheader=">= 100 followers"
             items={topJogjaDev}
+            onClick={this.props.onClick}
           />
           <CardSection
+            showLocation={false}
             header="Top popular Malang dev"
             subheader=">= 100 followers"
             items={topMalangDev}
+            onClick={this.props.onClick}
           />
         </div>
       </div>
