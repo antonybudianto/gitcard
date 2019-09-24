@@ -25,6 +25,10 @@ h1 {
   text-align: center;
 }
 
+.text-gray {
+  color: gray;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 20vh;

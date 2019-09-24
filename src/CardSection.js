@@ -45,6 +45,7 @@ function CardSection({
                     style={{
                       fontSize: '10pt'
                     }}
+                    className="text-center mt1 text-gray"
                   >
                     {u.node.location}
                   </div>
