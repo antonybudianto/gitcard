@@ -87,6 +87,7 @@ class SearchView extends Component {
                   type="text"
                   className="Search-input"
                   value={this.state.username}
+                  disabled={this.state.loading}
                   onChange={e => this.handleChangeUsername(e.target.value)}
                 />
                 <button disabled={this.state.loading} className="Search-btn">
@@ -151,7 +152,9 @@ class SearchView extends Component {
           ) : (
             <div className="Search-result-container">
               <h3>Find GitHub user total stars, repos, and others!</h3>
-              {this.state.loading && <div>Loading data, please wait!</div>}
+              {this.state.loading && (
+                <div>Looking @{this.state.username}, please wait!</div>
+              )}
               {this.state.error && <div>{this.state.error}</div>}
             </div>
           )}

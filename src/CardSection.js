@@ -29,8 +29,8 @@ function CardSection({
                 className="Card-img"
               />
               <div className="Card-right flex-wrap flex-col">
-                <div className="Card-name">
-                  {u.node.name} (
+                <div className="Card-name">{u.node.name}</div>
+                <div className="text-center">
                   <a
                     onClick={e => {
                       e.stopPropagation();
@@ -39,7 +39,6 @@ function CardSection({
                   >
                     {u.node.login}
                   </a>
-                  )
                 </div>
                 {showLocation && (
                   <div
@@ -50,12 +49,12 @@ function CardSection({
                     {u.node.location}
                   </div>
                 )}
-                <div className="flex Card-stat mt1 space-around">
-                  <div className="flex flex-col align-center">
+                <div className="flex Card-stat space-around">
+                  <div className="flex flex-col align-center Card-stat-item">
                     {' '}
                     <strong>{u.node.followers.totalCount}</strong>followers
                   </div>
-                  <div className="flex flex-col align-center">
+                  <div className="flex flex-col align-center Card-stat-item">
                     {' '}
                     <strong>{u.node.following.totalCount}</strong>following
                   </div>

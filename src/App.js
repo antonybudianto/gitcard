@@ -60,6 +60,7 @@ class App extends Component {
           </p>
         </header>
         <SearchView selectedUser={this.state.selectedUser} />
+        <hr />
         <div className="App-content flex-wrap">
           <div
             className={'Tab ' + (this.state.view === 'lang' ? 'active' : '')}
