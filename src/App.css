@@ -216,6 +216,9 @@ h1 {
   margin-top: 10px;
 }
 
+.Card-stat-item {
+}
+
 .Card > span > a {
   color: darkslategrey;
 }
@@ -238,12 +241,16 @@ h1 {
     width: 100%;
   }
 
+  .Card-container {
+    justify-content: center;
+  }
+
   .Card {
-    width: 100%;
+    width: 40%;
   }
 
   .Card-right {
-    width: auto;
+    width: 100%;
   }
 
   .Search-result-container {
@@ -259,6 +266,12 @@ h1 {
     margin-top: 15px;
     justify-content: center;
     align-items: center;
+  }
+}
+
+@media (max-width: 350px) {
+  .Card {
+    width: 100%;
   }
 }
 
