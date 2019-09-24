@@ -138,6 +138,30 @@ h1 {
   width: 50%;
 }
 
+.Card-section.full {
+  width: 100%;
+}
+
+.Item-tag {
+  background-color: #282c34;
+  color: white;
+  padding: 10px;
+  margin: 2px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.Item-tag:hover {
+  transition: background-color 0.5s ease;
+  background-color: darkslategray;
+}
+
+.Item-tag.active {
+  background-color: darkcyan;
+}
+
 .Card-header {
   display: flex;
   align-items: center;

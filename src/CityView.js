@@ -1,19 +1,70 @@
 import React, { Component } from 'react';
+
 import CardSection from './CardSection';
+import './CityView.css';
+
+const CITIES = [
+  {
+    field: 'topJakartaDev',
+    name: 'Jakarta',
+    subheader: '>=300 followers',
+    list: []
+  },
+  {
+    field: 'topBandungDev',
+    name: 'Bandung',
+    subheader: '>=200 followers',
+    list: []
+  },
+  {
+    field: 'topYogyakartaDev',
+    name: 'Yogyakarta',
+    subheader: '>=100 followers',
+    list: []
+  },
+  {
+    field: 'topMalangDev',
+    name: 'Malang',
+    subheader: '>=100 followers',
+    list: []
+  },
+  {
+    field: 'topSurabayaDev',
+    name: 'Surabaya',
+    subheader: '>=100 followers',
+    list: []
+  }
+];
 
 class CityView extends Component {
+  state = {
+    selectedCity: ''
+  };
+
+  handleSelectCity = city => {
+    this.setState({
+      selectedCity: city
+    });
+  };
+
   render() {
-    let topJakartaDev = [];
-    let topBandungDev = [];
-    let topJogjaDev = [];
-    let topMalangDev = [];
+    let cities = CITIES;
     const { data } = this.props;
     if (data !== null) {
-      topJakartaDev = data.topJakartaDev.edges;
-      topBandungDev = data.topBandungDev.edges;
-      topJogjaDev = data.topYogyakartaDev.edges;
-      topMalangDev = data.topMalangDev.edges;
+      cities = CITIES.map(c => {
+        if (data[c.field]) {
+          c.list = data[c.field].edges;
+        }
+        return c;
+      });
     }
+
+    let newCities = cities.filter(c => {
+      if (this.state.selectedCity === '') {
+        return true;
+      }
+      return this.state.selectedCity === c.name;
+    });
 
     return (
       <div
@@ -22,34 +73,40 @@ class CityView extends Component {
         }}
       >
         <div className="App-content flex-wrap">
-          <CardSection
-            showLocation={false}
-            header="Top popular Jakarta dev"
-            subheader=">= 300 followers"
-            items={topJakartaDev}
-            onClick={this.props.onClick}
-          />
-          <CardSection
-            showLocation={false}
-            header="Top popular Bandung dev"
-            subheader=">= 200 followers"
-            items={topBandungDev}
-            onClick={this.props.onClick}
-          />
-          <CardSection
-            showLocation={false}
-            header="Top popular Yogyakarta dev"
-            subheader=">= 100 followers"
-            items={topJogjaDev}
-            onClick={this.props.onClick}
-          />
-          <CardSection
-            showLocation={false}
-            header="Top popular Malang dev"
-            subheader=">= 100 followers"
-            items={topMalangDev}
-            onClick={this.props.onClick}
-          />
+          <div
+            onClick={() => this.handleSelectCity('')}
+            className={
+              'Item-tag ' + (this.state.selectedCity === '' ? 'active' : '')
+            }
+          >
+            All cities
+          </div>
+          {cities.map((c, i) => (
+            <div
+              key={i}
+              onClick={() => this.handleSelectCity(c.name)}
+              className={
+                'Item-tag ' +
+                (this.state.selectedCity === c.name ? 'active' : '')
+              }
+            >
+              {c.name}
+            </div>
+          ))}
+        </div>
+
+        <div className="App-content flex-wrap">
+          {newCities.map((c, i) => (
+            <CardSection
+              key={i}
+              full={this.state.selectedCity !== ''}
+              showLocation={false}
+              header={`Top popular ${c.name} dev`}
+              subheader={c.subheader}
+              items={c.list}
+              onClick={this.props.onClick}
+            />
+          ))}
         </div>
       </div>
     );

@@ -1,21 +1,68 @@
 import React, { Component } from 'react';
+
 import CardSection from './CardSection';
 
+const LANGS = [
+  {
+    field: 'topJsDev',
+    name: 'JavaScript',
+    subheader: '>=200 followers',
+    list: []
+  },
+  {
+    field: 'topPHPDev',
+    name: 'PHP',
+    subheader: '>=200 followers',
+    list: []
+  },
+  {
+    field: 'topJavaDev',
+    name: 'Java',
+    subheader: '>=200 followers',
+    list: []
+  },
+  {
+    field: 'topPythonDev',
+    name: 'Python',
+    subheader: '>=150 followers',
+    list: []
+  },
+  {
+    field: 'topGoDev',
+    name: 'Go',
+    subheader: '>=100 followers',
+    list: []
+  }
+];
+
 class LangView extends Component {
+  state = {
+    selectedLang: ''
+  };
+
+  handleSelectLang = lang => {
+    this.setState({
+      selectedLang: lang
+    });
+  };
   render() {
-    let topAllDevs = [];
-    let topJsDevs = [];
-    let topPythonDevs = [];
-    let topJavaDevs = [];
-    let topGoDevs = [];
+    let langs = LANGS;
     const { data } = this.props;
+
     if (data !== null) {
-      topAllDevs = data.topAllDev.edges;
-      topJavaDevs = data.topJavaDev.edges;
-      topPythonDevs = data.topPythonDev.edges;
-      topJsDevs = data.topJsDev.edges;
-      topGoDevs = data.topGoDev.edges;
+      langs = LANGS.map(c => {
+        c.list = data[c.field].edges;
+        return c;
+      });
     }
+
+    let newLangs = langs.filter(c => {
+      if (this.state.selectedLang === '') {
+        return true;
+      }
+      return this.state.selectedLang === c.name;
+    });
+
     return (
       <div
         style={{
@@ -23,36 +70,39 @@ class LangView extends Component {
         }}
       >
         <div className="App-content flex-wrap">
-          <CardSection
-            header="Top popular overall"
-            subheader=">= 500 followers"
-            items={topAllDevs}
-            onClick={this.props.onClick}
-          />
-          <CardSection
-            header="Top popular JavaScript dev"
-            subheader=">= 200 followers"
-            items={topJsDevs}
-            onClick={this.props.onClick}
-          />
-          <CardSection
-            header="Top popular Java dev"
-            subheader=">= 200 followers"
-            items={topJavaDevs}
-            onClick={this.props.onClick}
-          />
-          <CardSection
-            header="Top popular Python dev"
-            subheader=">= 150 followers"
-            items={topPythonDevs}
-            onClick={this.props.onClick}
-          />
-          <CardSection
-            header="Top popular Go dev"
-            subheader=">= 100 followers"
-            items={topGoDevs}
-            onClick={this.props.onClick}
-          />
+          <div
+            onClick={() => this.handleSelectLang('')}
+            className={
+              'Item-tag ' + (this.state.selectedLang === '' ? 'active' : '')
+            }
+          >
+            All languages
+          </div>
+          {langs.map((c, i) => (
+            <div
+              key={i}
+              onClick={() => this.handleSelectLang(c.name)}
+              className={
+                'Item-tag ' +
+                (this.state.selectedLang === c.name ? 'active' : '')
+              }
+            >
+              {c.name}
+            </div>
+          ))}
+        </div>
+        <div className="App-content flex-wrap">
+          {newLangs.map((c, i) => (
+            <CardSection
+              key={i}
+              full={this.state.selectedLang !== ''}
+              showLocation={false}
+              header={`Top popular ${c.name} dev`}
+              subheader={c.subheader}
+              items={c.list}
+              onClick={this.props.onClick}
+            />
+          ))}
         </div>
       </div>
     );

@@ -63,16 +63,16 @@ class App extends Component {
         <hr />
         <div className="App-content flex-wrap">
           <div
-            className={'Tab ' + (this.state.view === 'lang' ? 'active' : '')}
-            onClick={this.handleChangeLang}
-          >
-            by Language
-          </div>
-          <div
             className={'Tab ' + (this.state.view === 'city' ? 'active' : '')}
             onClick={this.handleChangeCity}
           >
             by City
+          </div>
+          <div
+            className={'Tab ' + (this.state.view === 'lang' ? 'active' : '')}
+            onClick={this.handleChangeLang}
+          >
+            by Language
           </div>
         </div>
         <LangView

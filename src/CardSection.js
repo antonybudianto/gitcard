@@ -4,11 +4,12 @@ function CardSection({
   header,
   subheader = '',
   items,
+  full,
   showLocation = true,
   onClick = () => {}
 }) {
   return (
-    <section className="Card-section">
+    <section className={'Card-section ' + (full ? 'full' : '')}>
       <div className="Card-header">
         <h3>{header}</h3>
         <div className="Card-subheader">{subheader}</div>
