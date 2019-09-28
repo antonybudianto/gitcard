@@ -242,7 +242,7 @@ h1 {
 
 @media (max-width: 600px) {
   .App-content {
-    width: 100%;
+    width: auto;
   }
 
   .Card-section {
