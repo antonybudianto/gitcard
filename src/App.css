@@ -269,11 +269,19 @@ h1 {
 
   .Search-btn {
     margin-top: 5px;
+    padding: 10px;
+    width: 100%;
   }
 
   .Search-result-container {
     width: 100%;
     min-height: auto;
+    text-align: center;
+  }
+
+  .Search-input-container {
+    width: 100%;
+    text-align: center;
   }
 
   .Search-result-summary {

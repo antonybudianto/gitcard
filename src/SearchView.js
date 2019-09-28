@@ -140,7 +140,7 @@ class SearchView extends Component {
               {this.state.error && <div>{this.state.error}</div>}
             </div>
           )}
-          <div>
+          <div className="Search-input-container">
             <h3>Search username</h3>
             <form noValidate onSubmit={this.handleSearch}>
               <div className="flex-wrap">
