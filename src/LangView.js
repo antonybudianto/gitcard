@@ -28,8 +28,26 @@ const LANGS = [
     list: []
   },
   {
+    field: 'topHTMLDev',
+    name: 'HTML',
+    subheader: '>=150 followers',
+    list: []
+  },
+  {
     field: 'topGoDev',
     name: 'Go',
+    subheader: '>=100 followers',
+    list: []
+  },
+  {
+    field: 'topRubyDev',
+    name: 'Ruby',
+    subheader: '>=100 followers',
+    list: []
+  },
+  {
+    field: 'topShellDev',
+    name: 'Shell',
     subheader: '>=100 followers',
     list: []
   }
@@ -51,7 +69,9 @@ class LangView extends Component {
 
     if (data !== null) {
       langs = LANGS.map(c => {
-        c.list = data[c.field].edges;
+        if (data[c.field]) {
+          c.list = data[c.field].edges;
+        }
         return c;
       });
     }

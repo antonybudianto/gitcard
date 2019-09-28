@@ -29,8 +29,20 @@ const CITIES = [
     list: []
   },
   {
+    field: 'topBaliDev',
+    name: 'Bali',
+    subheader: '>=100 followers',
+    list: []
+  },
+  {
     field: 'topSurabayaDev',
     name: 'Surabaya',
+    subheader: '>=100 followers',
+    list: []
+  },
+  {
+    field: 'topSemarangDev',
+    name: 'Semarang',
     subheader: '>=100 followers',
     list: []
   }
