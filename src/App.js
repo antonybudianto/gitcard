@@ -87,6 +87,10 @@ class App extends Component {
         />
         <footer className="App-content App-footer">
           <div>
+            *If you're an Indonesian but living abroad, you can add "Indonesia"
+            next to your profile's "Location" so you can also be queried!
+          </div>
+          <div>
             *GitHub API has rate limit, so if you get empty result, please
             revisit after a minute.
           </div>
@@ -99,7 +103,9 @@ class App extends Component {
               github.com/antonybudianto/gitcard
             </a>
           </div>
-          <div>&copy; {new Date().getFullYear()}. Antony Budianto.</div>
+          <div>
+            <br /> &copy; {new Date().getFullYear()}. Antony Budianto.
+          </div>
         </footer>
       </div>
     );

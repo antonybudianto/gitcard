@@ -42,6 +42,8 @@ h1 {
 
 .App-content {
   padding: 10px;
+  width: 90%;
+  margin: auto;
 }
 
 .App-footer {
@@ -51,7 +53,9 @@ h1 {
 }
 
 .Search-input {
+  width: 300px;
   padding: 10px;
+  font-size: 14pt;
   border: 1px solid lightblue;
   outline: none;
 }
@@ -63,6 +67,7 @@ h1 {
 .Search-btn {
   background: white;
   border: 1px solid gray;
+  font-size: 12pt;
 }
 
 .Search-btn:hover {
@@ -216,9 +221,6 @@ h1 {
   margin-top: 10px;
 }
 
-.Card-stat-item {
-}
-
 .Card > span > a {
   color: darkslategrey;
 }
@@ -229,14 +231,20 @@ h1 {
   color: white;
   border-bottom: 1px solid dimgrey;
   cursor: pointer;
+  transition: background-color 0.5s ease;
 }
 
 .Tab.active {
   background-color: lightslategray;
   border-bottom: 2px solid #61dafb;
+  transition: background-color 0.5s ease;
 }
 
 @media (max-width: 600px) {
+  .App-content {
+    width: 100%;
+  }
+
   .Card-section {
     width: 100%;
   }

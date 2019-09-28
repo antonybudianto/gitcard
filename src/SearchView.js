@@ -78,24 +78,6 @@ class SearchView extends Component {
     return (
       <div>
         <div className="App-content flex-wrap space-between">
-          <div>
-            <h3>Search username</h3>
-            <form noValidate onSubmit={this.handleSearch}>
-              <div className="flex-wrap">
-                <input
-                  placeholder="Search username"
-                  type="text"
-                  className="Search-input"
-                  value={this.state.username}
-                  disabled={this.state.loading}
-                  onChange={e => this.handleChangeUsername(e.target.value)}
-                />
-                <button disabled={this.state.loading} className="Search-btn">
-                  Search
-                </button>
-              </div>
-            </form>
-          </div>
           {this.state.data !== null ? (
             <div className="Search-result-container">
               <h3>Result for {this.state.data.username}:</h3>
@@ -158,6 +140,24 @@ class SearchView extends Component {
               {this.state.error && <div>{this.state.error}</div>}
             </div>
           )}
+          <div>
+            <h3>Search username</h3>
+            <form noValidate onSubmit={this.handleSearch}>
+              <div className="flex-wrap">
+                <input
+                  placeholder="Type in GitHub username"
+                  type="text"
+                  className="Search-input"
+                  value={this.state.username}
+                  disabled={this.state.loading}
+                  onChange={e => this.handleChangeUsername(e.target.value)}
+                />
+                <button disabled={this.state.loading} className="Search-btn">
+                  Search
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     );
