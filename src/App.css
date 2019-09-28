@@ -11,6 +11,7 @@
 .App-p {
   margin: 10px;
   font-size: 14pt;
+  text-align: center;
 }
 
 h1 {
@@ -68,6 +69,7 @@ h1 {
   background: white;
   border: 1px solid gray;
   font-size: 12pt;
+  padding: 5px;
 }
 
 .Search-btn:hover {
@@ -101,7 +103,7 @@ h1 {
 }
 
 .Search-result-container {
-  width: 70%;
+  width: 60%;
   min-height: 163px;
 }
 
@@ -261,8 +263,17 @@ h1 {
     width: 100%;
   }
 
+  .Search-input {
+    width: 100%;
+  }
+
+  .Search-btn {
+    margin-top: 5px;
+  }
+
   .Search-result-container {
     width: 100%;
+    min-height: auto;
   }
 
   .Search-result-summary {
