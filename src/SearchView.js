@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { get } from 'lodash-es';
+
+import './SearchView.css';
 
 class SearchView extends Component {
   state = {
@@ -128,6 +131,39 @@ class SearchView extends Component {
                       </div>
                     );
                   })}
+                </div>
+              </div>
+              <div>
+                <h4>Top repository</h4>
+                <div className="Toprepo">
+                  <a
+                    href={`https://github.com/${this.state.data.username}/${this.state.data.top_repo.node.name}`}
+                  >
+                    {this.state.data.top_repo.node.name}
+                  </a>
+                  {'  '}
+                  <div className="Toprepo-stat mt2">
+                    <div className="Search-lang-item inline">
+                      {get(
+                        this.state.data.top_repo.node.primaryLanguage,
+                        'name',
+                        'Others'
+                      )}
+                    </div>
+                    <div className="Icon-text ml1">
+                      <span aria-label="star" role="img">
+                        ⭐️
+                      </span>{' '}
+                      {this.state.data.top_repo.node.stargazers.totalCount}{' '}
+                      stars
+                    </div>
+                    <div className="Icon-text ml1">
+                      <span aria-label="fork" role="img">
+                        📙
+                      </span>{' '}
+                      {this.state.data.top_repo.node.forkCount} forks
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

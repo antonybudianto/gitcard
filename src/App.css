@@ -14,12 +14,30 @@
   text-align: center;
 }
 
+a {
+  color: royalblue;
+}
+
 h1 {
   margin: 10px;
 }
 
 .mt1 {
   margin-top: 5px;
+}
+
+.mt2 {
+  margin-top: 10px;
+}
+
+.ml1 {
+  margin-left: 5px;
+}
+
+.Icon-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .text-center {
@@ -53,60 +71,6 @@ h1 {
   color: gray;
 }
 
-.Search-input {
-  width: 300px;
-  padding: 10px;
-  font-size: 14pt;
-  border: 1px solid lightblue;
-  outline: none;
-}
-
-.Search-input:focus {
-  background-color: lightcyan;
-}
-
-.Search-btn {
-  background: white;
-  border: 1px solid gray;
-  font-size: 12pt;
-  padding: 5px;
-}
-
-.Search-btn:hover {
-  background: lightblue;
-}
-
-.Search-ava {
-  width: 100px;
-  height: 100px;
-}
-
-.Search-stat {
-  margin-left: 10px;
-}
-
-.Search-lang-container {
-  width: 400px;
-}
-
-.Search-lang-item {
-  background-color: #282c34;
-  color: white;
-  padding: 5px;
-  margin: 2px;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.Search-lang-item > span {
-  font-weight: normal;
-}
-
-.Search-result-container {
-  width: 60%;
-  min-height: 163px;
-}
-
 .flex {
   display: flex;
 }
@@ -118,10 +82,6 @@ h1 {
 
 .flex-col {
   flex-direction: column;
-}
-
-.flex-half {
-  width: 50%;
 }
 
 .align-center {
@@ -169,64 +129,6 @@ h1 {
   background-color: darkcyan;
 }
 
-.Card-header {
-  display: flex;
-  align-items: center;
-}
-
-.Card-subheader {
-  color: gray;
-  margin-left: 10px;
-  font-weight: bold;
-}
-
-.Card-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.Card-img {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 10px;
-}
-
-.Card-right {
-  width: 170px;
-}
-
-.Card-name {
-  font-size: 11pt;
-  text-align: center;
-}
-
-.Card {
-  padding: 10px;
-  margin: 5px;
-  border: 1px solid gray;
-  border-radius: 2px;
-  flex-wrap: wrap;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.Card:hover {
-  background-color: aliceblue;
-  cursor: pointer;
-}
-
-.Card-stat {
-  color: gray;
-  font-size: 10pt;
-  margin-top: 10px;
-}
-
-.Card > span > a {
-  color: darkslategrey;
-}
-
 .Tab {
   padding: 20px 50px;
   background-color: dimgrey;
@@ -246,64 +148,6 @@ h1 {
   .App-content {
     width: auto;
   }
-
-  .Card-section {
-    width: 100%;
-  }
-
-  .Card-container {
-    justify-content: center;
-  }
-
-  .Card {
-    width: 40%;
-  }
-
-  .Card-right {
-    width: 100%;
-  }
-
-  .Search-input {
-    width: 100%;
-  }
-
-  .Search-btn {
-    margin-top: 5px;
-    padding: 10px;
-    width: 100%;
-  }
-
-  .Search-result-container {
-    width: 100%;
-    min-height: auto;
-    text-align: center;
-  }
-
-  .Search-input-container {
-    width: 100%;
-    text-align: center;
-  }
-
-  .Search-result-summary {
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .Search-lang-container {
-    margin-top: 15px;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-@media (max-width: 350px) {
-  .Card {
-    width: 100%;
-  }
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
