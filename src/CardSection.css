@@ -21,8 +21,13 @@
   margin: 0 7.5px;
   color: #010101;
   cursor: pointer;
-  transition: transform 300ms ease-in;
+  transition: all 300ms ease-in;
   outline: none;
+}
+
+.Navigation-icon.disabled {
+  opacity: 0.4;
+  pointer-events: none;
 }
 
 .Navigation-icon:hover {
@@ -32,16 +37,19 @@
   display: flex;
   flex-wrap: nowrap;
   transition: transform 300ms ease-in;
-  padding: 0 15px;
 }
 
 .Image-wrapper {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 30px;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid #010101;
+}
+
+.Image-wrapper + div {
+  width: 100%;
 }
 
 .Card-img {
@@ -50,9 +58,9 @@
   height: auto;
 }
 
-.Card-right {
+/* .Card-right {
   width: 170px;
-}
+} */
 
 .Card-name {
   font-size: 16px;
@@ -61,7 +69,7 @@
 }
 
 .Card {
-  padding: 30px 15px;
+  padding: 30px 40px;
   margin: 0 7.5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: 1px solid #ddd;
@@ -72,23 +80,19 @@
   align-items: center;
   justify-content: center;
   transition: all 250ms ease-in;
-  min-width: calc(20% - 7.5px);
-}
-
-.Card:first-child {
-  margin-left: 0;
-}
-
-.Card:last-child {
-  margin-right: 0;
+  min-width: calc(20% - 15px);
+  min-height: 300px;
+  position: relative;
+  z-index: 1;
 }
 
 .Card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   background-color: #010101;
   color: #fff;
   cursor: pointer;
-  transform: scale(1.3);
+  transform: scale(1.1);
+  z-index: 9;
+  position: relative;
 }
 
 .Card:hover .Profile-link {
@@ -102,34 +106,43 @@
 }
 
 .Card-stat {
-  font-size: 10pt;
-  margin-top: 10px;
+  font-size: 14px;
+  margin-top: 30px;
+  justify-content: space-between;
 }
 
 .Card > span > a {
   color: darkslategrey;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 992px) {
+  .Card {
+    min-width: calc(25% - 15px);
+  }
+}
+@media (max-width: 768px) {
   .Card-section {
     width: 100%;
   }
 
-  .Card-container {
-    justify-content: center;
-  }
-
   .Card {
-    width: 40%;
+    min-width: calc(50% - 15px);
   }
 
-  .Card-right {
-    width: 100%;
+  .Card:hover {
+    background-color: #fff;
+    color: #010101;
+    transform: none;
+  }
+  .Heading-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 442px) {
   .Card {
-    width: 100%;
+    min-width: 100%;
+    margin: 0;
   }
 }

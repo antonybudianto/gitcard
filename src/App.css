@@ -18,6 +18,15 @@ body {
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
+  padding: 0 15px;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.Search-input-container form {
+  margin-top: 15px;
 }
 
 @media (min-width: 1200px) {
@@ -49,6 +58,7 @@ body {
     max-width: 540px;
   }
 }
+
 .App {
   background: white;
 }
@@ -145,7 +155,7 @@ h1 {
 }
 
 .Card-section {
-  margin: 25px 0;
+  margin: 50px 0;
   width: 100%;
 }
 
@@ -166,6 +176,13 @@ h1 {
   text-align: center;
 }
 
+@media (max-width: 576px) {
+  .Item-tag {
+    text-align: center;
+    width: calc(50% - 4px);
+  }
+}
+
 .Item-tag:hover {
   background-color: #010101;
   color: #fff;
@@ -178,17 +195,27 @@ h1 {
 
 .Tab {
   padding: 20px 50px;
-  background-color: dimgrey;
-  color: white;
-  border-bottom: 1px solid dimgrey;
+  background-color: #fff;
+  color: #010101;
+  border: 1px solid #010101;
   cursor: pointer;
-  transition: background-color 0.5s ease;
+  transition: all 300 ease-in;
+  width: 200px;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 600;
 }
 
 .Tab.active {
-  background-color: lightslategray;
-  border-bottom: 2px solid #61dafb;
-  transition: background-color 0.5s ease;
+  background-color: #010101;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .Tab {
+    width: 100%;
+    padding: 10px;
+  }
 }
 
 @media (max-width: 600px) {

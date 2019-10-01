@@ -6,21 +6,34 @@
   outline: none;
   color: #010101;
   border-right: none;
+  opacity: 0.5;
+  cursor: pointer;
 }
 
-.Search-input:focus {
-  background-color: lightcyan;
+.Search-input:hover {
+  opacity: 1;
+}
+
+.Search-input:hover + .Search-btn {
+  opacity: 1;
+  background: #010101;
+  color: #fff;
 }
 
 .Search-btn {
   background: white;
-  border: 1px solid gray;
-  font-size: 12pt;
+  border: 1px solid #010101;
+  color: #010101;
+  font-size: 14px;
   padding: 5px;
+  transition: all 300ms ease-in;
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 .Search-btn:hover {
-  background: lightblue;
+  background: #010101;
+  color: #fff;
 }
 
 .Search-ava {
@@ -70,6 +83,7 @@
 @media (max-width: 600px) {
   .Search-input {
     width: 100%;
+    border-right: 1px solid #010101;
   }
 
   .Search-btn {

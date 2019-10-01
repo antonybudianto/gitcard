@@ -6,9 +6,38 @@ class CardSection extends React.Component {
   constructor() {
     super();
     this.state = {
-      selectedIndex: 0
+      selectedIndex: 0,
+      cardsInARow: 0
     };
   }
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions = () => {
+    const width = window.innerWidth;
+    let cardsInARow;
+    switch (true) {
+      case width > 992:
+        cardsInARow = 5;
+        break;
+      case width > 768 && width < 992:
+        cardsInARow = 4;
+        break;
+      case width > 468 && width < 768:
+        cardsInARow = 2;
+        break;
+      default:
+        cardsInARow = 1;
+    }
+    this.setState({ cardsInARow });
+  };
+
   incrementSelectedIndex = () => {
     this.setState(({ selectedIndex }) => ({
       selectedIndex: selectedIndex + 1
@@ -30,31 +59,47 @@ class CardSection extends React.Component {
       profilesCount
     } = this.props;
 
-    const { selectedIndex } = this.state;
+    const { selectedIndex, cardsInARow } = this.state;
     const style =
       selectedIndex >= 1
         ? { transform: `translateX(-${selectedIndex * 100}%)` }
         : {};
-    console.log('Selectedindex', selectedIndex);
-    const slidesCount = profilesCount / 5;
-    console.log('slidesCount', slidesCount);
+
+    let slidesCount;
+    if (cardsInARow) {
+      slidesCount = Math.ceil(profilesCount / cardsInARow);
+    }
     const renderNavigation =
-      slidesCount > 1 ? (
+      slidesCount >= 1 ? (
         <div>
           <button
-            className="Navigation-icon"
+            className={`Navigation-icon ${
+              selectedIndex === 0 ? 'disabled' : ''
+            }`}
             onClick={this.decrementSelectedIndex}
+            disabled={selectedIndex === 0 ? true : false}
           >
             &#8249;
           </button>
           <button
-            className="Navigation-icon"
+            className={`Navigation-icon ${
+              selectedIndex === slidesCount - 1 ? 'disabled' : ''
+            }`}
             onClick={this.incrementSelectedIndex}
           >
             &#8250;
           </button>
         </div>
       ) : null;
+    console.log(header);
+    console.log(
+      selectedIndex,
+      'selectedIndex',
+      'profilesCount',
+      profilesCount,
+      'slidesCount',
+      slidesCount
+    );
     return (
       <section className={'Card-section ' + (full ? 'full' : '')}>
         <div className="Card-header">
@@ -82,7 +127,7 @@ class CardSection extends React.Component {
                       className="Card-img"
                     />
                   </div>
-                  <div className="Card-right flex-wrap flex-col">
+                  <div>
                     <div className="Card-name">{u.node.name}</div>
                     <div className="text-center">
                       <a
@@ -105,7 +150,7 @@ class CardSection extends React.Component {
                         {u.node.location}
                       </div>
                     )}
-                    <div className="flex Card-stat space-around">
+                    <div className="flex Card-stat">
                       <div className="flex flex-col align-center Card-stat-item">
                         {' '}
                         <strong>{u.node.followers.totalCount}</strong>followers
