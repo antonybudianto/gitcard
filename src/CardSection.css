@@ -30,6 +30,11 @@
   text-align: center;
 }
 
+.Card-number {
+  font-size: 14pt;
+  margin: 5px;
+}
+
 .Card {
   padding: 10px;
   margin: 5px;
