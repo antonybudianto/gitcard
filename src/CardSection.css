@@ -14,13 +14,6 @@
   flex-wrap: wrap;
 }
 
-.Card-img {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 10px;
-  border-radius: 50%;
-}
-
 .Card-right {
   width: 170px;
 }
@@ -30,15 +23,51 @@
   text-align: center;
 }
 
+.Card-img-wrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.Card-img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
 .Card-number {
-  font-size: 14pt;
-  margin: 5px;
+  position: absolute;
+  left: -45px;
+  top: 0px;
+  font-size: 12pt;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: gray;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Card:first-child .Card-number {
+  background-color: goldenrod;
+}
+
+.Card:nth-child(2) .Card-number {
+  background-color: silver;
+}
+
+.Card:nth-child(3) .Card-number {
+  background-color: rosybrown;
 }
 
 .Card {
   padding: 10px;
   margin: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: 1px solid #c3bebe;
   border-radius: 5px;
   flex-wrap: wrap;
@@ -49,7 +78,7 @@
 }
 
 .Card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   background-color: aliceblue;
   cursor: pointer;
 }

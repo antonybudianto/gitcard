@@ -57,12 +57,21 @@
 }
 
 .Toprepo {
-  border: 1px solid lightgray;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid #c3bebe;
+  border-radius: 5px;
   padding: 10px;
 }
 
 .Toprepo-stat {
   display: flex;
+}
+
+.Search-result-summary {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid #c3bebe;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 @media (max-width: 600px) {
@@ -90,6 +99,9 @@
   .Search-result-summary {
     justify-content: space-around;
     align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #c3bebe;
+    border-radius: 5px;
   }
 
   .Search-lang-container {

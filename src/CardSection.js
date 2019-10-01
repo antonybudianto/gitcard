@@ -26,12 +26,14 @@ function CardSection({
                 onClick(u);
               }}
             >
-              <div className="Card-number">{i + 1}</div>
-              <img
-                src={u.node.avatarUrl}
-                alt={u.node.login}
-                className="Card-img"
-              />
+              <div className="Card-img-wrapper">
+                <div className="Card-number">{i + 1}</div>
+                <img
+                  src={u.node.avatarUrl}
+                  alt={u.node.login}
+                  className="Card-img"
+                />
+              </div>
               <div className="Card-right flex-wrap flex-col">
                 <div className="Card-name">{u.node.name}</div>
                 <div className="text-center">
