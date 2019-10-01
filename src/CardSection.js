@@ -26,33 +26,44 @@ class CardSection extends React.Component {
       items,
       full,
       showLocation = true,
-      onClick = () => {}
+      onClick = () => {},
+      profilesCount
     } = this.props;
 
     const { selectedIndex } = this.state;
     const style =
       selectedIndex >= 1
-        ? { transform: `translateX(-${selectedIndex * 300}px)` }
+        ? { transform: `translateX(-${selectedIndex * 100}%)` }
         : {};
     console.log('Selectedindex', selectedIndex);
+    const slidesCount = profilesCount / 5;
+    console.log('slidesCount', slidesCount);
+    const renderNavigation =
+      slidesCount > 1 ? (
+        <div>
+          <button
+            className="Navigation-icon"
+            onClick={this.decrementSelectedIndex}
+          >
+            &#8249;
+          </button>
+          <button
+            className="Navigation-icon"
+            onClick={this.incrementSelectedIndex}
+          >
+            &#8250;
+          </button>
+        </div>
+      ) : null;
     return (
       <section className={'Card-section ' + (full ? 'full' : '')}>
         <div className="Card-header">
-          <h3>{header}</h3>
-          <div className="Card-subheader">{subheader}</div>
+          <div className="Heading-wrapper">
+            <h3>{header}</h3>
+            <div className="Card-subheader">{subheader}</div>
+          </div>
+          {renderNavigation}
         </div>
-        <button
-          style={{ padding: '20px' }}
-          onClick={this.decrementSelectedIndex}
-        >
-          Prev
-        </button>
-        <button
-          style={{ padding: '20px' }}
-          onClick={this.incrementSelectedIndex}
-        >
-          Next
-        </button>
         <div className="Card-carousel">
           <div className="Card-container" style={style}>
             {items.map((u, i) => {

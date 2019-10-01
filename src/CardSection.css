@@ -2,14 +2,32 @@
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+  justify-content: space-between;
+}
+
+.Heading-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .Card-subheader {
-  color: gray;
   margin-left: 10px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
+.Navigation-icon {
+  font-size: 22px;
+  border: none;
+  margin: 0 7.5px;
+  color: #010101;
+  cursor: pointer;
+  transition: transform 300ms ease-in;
+  outline: none;
+}
+
+.Navigation-icon:hover {
+  transform: scale(1.5);
+}
 .Card-container {
   display: flex;
   flex-wrap: nowrap;

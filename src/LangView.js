@@ -121,6 +121,7 @@ class LangView extends Component {
               subheader={c.subheader}
               items={c.list}
               onClick={this.props.onClick}
+              profilesCount={CardSection.length}
             />
           ))}
         </div>

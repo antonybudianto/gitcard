@@ -154,23 +154,26 @@ h1 {
 }
 
 .Item-tag {
-  background-color: #282c34;
-  color: white;
+  background-color: #fff;
+  color: #010101;
   padding: 10px;
   margin: 2px;
-  border-radius: 5px;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.5s ease;
+  transition: all 0.5s ease-in;
+  border: 1px solid #010101;
+  min-width: 120px;
+  text-align: center;
 }
 
 .Item-tag:hover {
-  transition: background-color 0.5s ease;
-  background-color: darkslategray;
+  background-color: #010101;
+  color: #fff;
 }
 
 .Item-tag.active {
-  background-color: darkcyan;
+  color: #fff;
+  background-color: #010101;
 }
 
 .Tab {

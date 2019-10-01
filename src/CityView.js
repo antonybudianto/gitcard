@@ -77,7 +77,6 @@ class CityView extends Component {
       }
       return this.state.selectedCity === c.name;
     });
-
     return (
       <div
         style={{
@@ -117,6 +116,7 @@ class CityView extends Component {
               subheader={c.subheader}
               items={c.list}
               onClick={this.props.onClick}
+              profilesCount={newCities.length}
             />
           ))}
         </div>
