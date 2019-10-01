@@ -16,6 +16,7 @@
 
 .Card-right {
   width: 170px;
+  z-index: 1;
 }
 
 .Card-name {
@@ -24,7 +25,6 @@
 }
 
 .Card-img-wrapper {
-  position: relative;
   width: 80px;
   height: 80px;
   margin-bottom: 10px;
@@ -34,37 +34,68 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
+  position: relative;
+}
+
+.Card-circle {
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  font-size: 12pt;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-color: silver;
+  animation: slideIn 1s ease-in;
+}
+
+@keyframes slideIn {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    left: -50%;
+    opacity: 1;
+  }
 }
 
 .Card-number {
   position: absolute;
-  left: -45px;
-  top: 0px;
+  left: 10px;
+  top: 10px;
   font-size: 12pt;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  background-color: gray;
+  z-index: 0;
+  font-weight: bold;
+  font-size: 16pt;
   color: white;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
 }
 
-.Card:first-child .Card-number {
+.Card:first-child .Card-circle {
   background-color: goldenrod;
 }
 
-.Card:nth-child(2) .Card-number {
-  background-color: silver;
+.Card:nth-child(2) .Card-circle {
+  background-color: lightsalmon;
 }
 
-.Card:nth-child(3) .Card-number {
+.Card:nth-child(3) .Card-circle {
   background-color: rosybrown;
 }
 
 .Card {
+  position: relative;
+  overflow: hidden;
   padding: 10px;
   margin: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

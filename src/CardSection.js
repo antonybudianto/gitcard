@@ -27,6 +27,7 @@ function CardSection({
               }}
             >
               <div className="Card-img-wrapper">
+                <div className="Card-circle"></div>
                 <div className="Card-number">{i + 1}</div>
                 <img
                   src={u.node.avatarUrl}
