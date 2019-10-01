@@ -27,12 +27,12 @@
   position: relative;
   width: 80px;
   height: 80px;
+  margin-bottom: 10px;
 }
 
 .Card-img {
   width: 80px;
   height: 80px;
-  margin-bottom: 10px;
   border-radius: 50%;
 }
 
