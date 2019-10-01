@@ -14,26 +14,14 @@
   opacity: 1;
 }
 
-.Search-input:hover + .Search-btn {
-  opacity: 1;
-  background: #010101;
-  color: #fff;
-}
-
 .Search-btn {
-  background: white;
+  background: #010101;
   border: 1px solid #010101;
-  color: #010101;
+  color: #fff;
   font-size: 14px;
   padding: 5px;
   transition: all 300ms ease-in;
-  opacity: 0.5;
   cursor: pointer;
-}
-
-.Search-btn:hover {
-  background: #010101;
-  color: #fff;
 }
 
 .Search-ava {

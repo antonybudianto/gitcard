@@ -141,6 +141,21 @@ class CardSection extends React.Component {
                         {u.node.location}
                       </div>
                     )}
+                    <div className="Rating">
+                      <span className="fa fa-star checked"></span>
+                      <span
+                        className={`fa fa-star ${i + 1 < 8 ? 'checked' : ''}`}
+                      ></span>
+                      <span
+                        className={`fa fa-star ${i + 1 < 5 ? 'checked' : ''}`}
+                      ></span>
+                      <span
+                        className={`fa fa-star ${i + 1 < 3 ? 'checked' : ''}`}
+                      ></span>
+                      <span
+                        className={`fa fa-star ${i + 1 < 2 ? 'checked' : ''}`}
+                      ></span>
+                    </div>
                     <div className="flex Card-stat">
                       <div className="flex flex-col align-center Card-stat-item">
                         {' '}

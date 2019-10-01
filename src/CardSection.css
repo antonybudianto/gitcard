@@ -42,7 +42,7 @@
 .Image-wrapper {
   width: 100px;
   height: 100px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid #010101;
@@ -66,6 +66,7 @@
   font-size: 16px;
   text-align: center;
   font-weight: 600;
+  min-height: 45px;
 }
 
 .Card {
@@ -105,9 +106,22 @@
   font-size: 14px;
 }
 
+.Rating {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.Rating .fa {
+  font-size: 20px;
+}
+
+.Rating .checked {
+  color: orange;
+}
+
 .Card-stat {
   font-size: 14px;
-  margin-top: 30px;
   justify-content: space-between;
 }
 
@@ -144,5 +158,9 @@
   .Card {
     min-width: 100%;
     margin: 0;
+  }
+
+  .Card-stat {
+    justify-content: space-around;
   }
 }
