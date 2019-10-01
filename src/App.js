@@ -59,32 +59,34 @@ class App extends Component {
             Discover awesome Open-source dev from <strong>Indonesia</strong>
           </p>
         </header>
-        <SearchView selectedUser={this.state.selectedUser} />
-        <hr />
-        <div className="App-content flex-wrap">
-          <div
-            className={'Tab ' + (this.state.view === 'city' ? 'active' : '')}
-            onClick={this.handleChangeCity}
-          >
-            by City
+        <div className="Container">
+          <SearchView selectedUser={this.state.selectedUser} />
+          <hr />
+          <div className="App-content flex-wrap">
+            <div
+              className={'Tab ' + (this.state.view === 'city' ? 'active' : '')}
+              onClick={this.handleChangeCity}
+            >
+              by City
+            </div>
+            <div
+              className={'Tab ' + (this.state.view === 'lang' ? 'active' : '')}
+              onClick={this.handleChangeLang}
+            >
+              by Language
+            </div>
           </div>
-          <div
-            className={'Tab ' + (this.state.view === 'lang' ? 'active' : '')}
-            onClick={this.handleChangeLang}
-          >
-            by Language
-          </div>
+          <LangView
+            onClick={this.handleClick}
+            data={this.state.data}
+            display={this.state.view === 'lang'}
+          />
+          <CityView
+            onClick={this.handleClick}
+            data={this.state.data}
+            display={this.state.view === 'city'}
+          />
         </div>
-        <LangView
-          onClick={this.handleClick}
-          data={this.state.data}
-          display={this.state.view === 'lang'}
-        />
-        <CityView
-          onClick={this.handleClick}
-          data={this.state.data}
-          display={this.state.view === 'city'}
-        />
         <footer className="App-content App-footer">
           <div>
             *If you're an Indonesian but living abroad, you can add "Indonesia"

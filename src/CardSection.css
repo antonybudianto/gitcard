@@ -14,11 +14,19 @@
   flex-wrap: wrap;
 }
 
-.Card-img {
+.Image-wrapper {
   width: 80px;
   height: 80px;
   margin-bottom: 10px;
   border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #010101;
+}
+
+.Card-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .Card-right {
@@ -26,15 +34,16 @@
 }
 
 .Card-name {
-  font-size: 11pt;
+  font-size: 16px;
   text-align: center;
+  font-weight: 600;
 }
 
 .Card {
-  padding: 10px;
-  margin: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border: 1px solid #c3bebe;
+  padding: 30px 15px;
+  margin: 7.5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
   border-radius: 5px;
   flex-wrap: wrap;
   display: flex;
@@ -44,13 +53,24 @@
 }
 
 .Card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   background-color: aliceblue;
   cursor: pointer;
 }
 
+.Card:hover .Profile-link {
+  opacity: 1;
+}
+
+.Profile-link {
+  color: #010101;
+  opacity: 0.8;
+  transition: opacity 300ms ease-in;
+  text-decoration: none;
+  font-size: 14px;
+}
+
 .Card-stat {
-  color: gray;
   font-size: 10pt;
   margin-top: 10px;
 }

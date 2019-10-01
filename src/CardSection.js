@@ -26,11 +26,13 @@ function CardSection({
                 onClick(u);
               }}
             >
-              <img
-                src={u.node.avatarUrl}
-                alt={u.node.login}
-                className="Card-img"
-              />
+              <div className="Image-wrapper">
+                <img
+                  src={u.node.avatarUrl}
+                  alt={u.node.login}
+                  className="Card-img"
+                />
+              </div>
               <div className="Card-right flex-wrap flex-col">
                 <div className="Card-name">{u.node.name}</div>
                 <div className="text-center">
@@ -38,9 +40,10 @@ function CardSection({
                     onClick={e => {
                       e.stopPropagation();
                     }}
+                    className="Profile-link"
                     href={`https://github.com/${u.node.login}`}
                   >
-                    {u.node.login}
+                    @{u.node.login}
                   </a>
                 </div>
                 {showLocation && (

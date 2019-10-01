@@ -89,7 +89,7 @@ class LangView extends Component {
           display: this.props.display ? 'block' : 'none'
         }}
       >
-        <div className="App-content flex-wrap">
+        <div>
           <div
             onClick={() => this.handleSelectLang('')}
             className={
