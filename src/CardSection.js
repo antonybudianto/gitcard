@@ -26,6 +26,7 @@ function CardSection({
                 onClick(u);
               }}
             >
+              <div className="Card-number">{i + 1}</div>
               <img
                 src={u.node.avatarUrl}
                 alt={u.node.login}
