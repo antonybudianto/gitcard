@@ -91,15 +91,6 @@ class CardSection extends React.Component {
           </button>
         </div>
       ) : null;
-    console.log(header);
-    console.log(
-      selectedIndex,
-      'selectedIndex',
-      'profilesCount',
-      profilesCount,
-      'slidesCount',
-      slidesCount
-    );
     return (
       <section className={'Card-section ' + (full ? 'full' : '')}>
         <div className="Card-header">

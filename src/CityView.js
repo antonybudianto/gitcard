@@ -77,7 +77,6 @@ class CityView extends Component {
       }
       return this.state.selectedCity === c.name;
     });
-    console.log('newCities', newCities);
     return (
       <div
         style={{
