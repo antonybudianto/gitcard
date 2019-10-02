@@ -79,7 +79,7 @@ class CardSection extends React.Component {
             onClick={this.decrementSelectedIndex}
             disabled={selectedIndex === 0 ? true : false}
           >
-            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            <i className="fa fa-chevron-left" aria-hidden="true"></i>
           </button>
           <button
             className={`Navigation-icon ${
@@ -111,24 +111,26 @@ class CardSection extends React.Component {
                     onClick(u);
                   }}
                 >
-                  <div className="Image-wrapper">
+                  <div className="Card-img-wrapper">
+                    <div className="Card-circle"></div>
+                    <div className="Card-number">{i + 1}</div>
                     <img
                       src={u.node.avatarUrl}
                       alt={u.node.login}
                       className="Card-img"
                     />
                   </div>
-                  <div>
+                  <div className="Card-right flex-wrap flex-col">
                     <div className="Card-name">{u.node.name}</div>
                     <div className="text-center">
                       <a
+                        className="Card__link"
                         onClick={e => {
                           e.stopPropagation();
                         }}
-                        className="Profile-link"
                         href={`https://github.com/${u.node.login}`}
                       >
-                        @{u.node.login}
+                        {u.node.login}
                       </a>
                     </div>
                     {showLocation && (
@@ -141,18 +143,14 @@ class CardSection extends React.Component {
                         {u.node.location}
                       </div>
                     )}
-                    <div className="flex Card-stat">
+                    <div className="flex Card-stat space-around">
                       <div className="flex flex-col align-center Card-stat-item">
-                        <strong>{i + 1}</strong>
-                        Rank
+                        {' '}
+                        <strong>{u.node.followers.totalCount}</strong>followers
                       </div>
                       <div className="flex flex-col align-center Card-stat-item">
                         {' '}
-                        <strong>{u.node.followers.totalCount}</strong>Followers
-                      </div>
-                      <div className="flex flex-col align-center Card-stat-item">
-                        {' '}
-                        <strong>{u.node.following.totalCount}</strong>Following
+                        <strong>{u.node.following.totalCount}</strong>following
                       </div>
                     </div>
                   </div>
