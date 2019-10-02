@@ -39,6 +39,7 @@ function CardSection({
                 <div className="Card-name">{u.node.name}</div>
                 <div className="text-center">
                   <a
+                    className="Card__link"
                     onClick={e => {
                       e.stopPropagation();
                     }}
