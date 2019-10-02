@@ -50,6 +50,12 @@ const LANGS = [
     name: 'Shell',
     subheader: '>=100 followers',
     list: []
+  },
+  {
+    field: 'topSwiftDev',
+    name: 'Swift',
+    subheader: '>=50 followers',
+    list: []
   }
 ];
 
