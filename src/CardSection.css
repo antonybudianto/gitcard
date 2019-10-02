@@ -38,6 +38,7 @@
   display: flex;
   flex-wrap: nowrap;
   transition: transform 300ms ease-in;
+  /* overflow-x: auto; */
 }
 
 .Card-right {
@@ -197,6 +198,17 @@
   .Card {
     min-width: calc(25% - 15px);
   }
+  .Card:hover {
+    transform: initial;
+  }
+  .Navigation-wrapper {
+    display: none;
+  }
+
+  .Card-container {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
 }
 @media (max-width: 768px) {
   .Card-section {
@@ -214,12 +226,14 @@
 }
 
 @media (max-width: 442px) {
-  .Card {
-    min-width: 100%;
-    margin: 0;
-  }
-
   .Card-stat {
     justify-content: space-around;
+  }
+}
+
+@media (max-width: 320px) {
+  .Card {
+    min-width: 100%;
+    margin-right: 5px;
   }
 }

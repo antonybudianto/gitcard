@@ -71,7 +71,7 @@ class CardSection extends React.Component {
     }
     const renderNavigation =
       slidesCount >= 1 ? (
-        <div>
+        <div className="Navigation-wrapper">
           <button
             className={`Navigation-icon ${
               selectedIndex === 0 ? 'disabled' : ''
