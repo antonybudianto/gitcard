@@ -124,11 +124,8 @@
   color: darkslategrey;
 }
 
-.Card__link {
-  text-decoration: none;
-}
-
-.Card__link:hover {
+.Card__link:hover,
+.Card__link:focus {
   text-shadow: #324b98 5px 3px 9px;
   text-decoration: none;
   font-weight: 400;
