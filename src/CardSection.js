@@ -96,7 +96,7 @@ class CardSection extends React.Component {
             }`}
             onClick={this.incrementSelectedIndex}
           >
-            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            <i className="fa fa-chevron-right" aria-hidden="true"></i>
           </button>
         </div>
       ) : null;

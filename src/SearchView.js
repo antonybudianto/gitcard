@@ -58,6 +58,9 @@ class SearchView extends Component {
           ...res.data,
           langArr: sortedLangArr
         };
+        if (!newData.avatar_url) {
+          throw new Error('Invalid profile');
+        }
         this.setState({
           loading: false,
           data: newData
@@ -133,7 +136,7 @@ class SearchView extends Component {
                   })}
                 </div>
               </div>
-              <div>
+              <div className="mt2">
                 <h4>Top repository</h4>
                 <div className="Toprepo">
                   <a
