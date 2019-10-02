@@ -124,6 +124,17 @@
   color: darkslategrey;
 }
 
+.Card__link {
+  text-decoration: none;
+}
+
+.Card__link:hover {
+  text-shadow: #324b98 5px 3px 9px;
+  text-decoration: none;
+  font-weight: 400;
+  transition: all 0.2s ease-in;
+}
+
 @media (max-width: 600px) {
   .Card-section {
     width: 100%;
