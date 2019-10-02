@@ -1,17 +1,44 @@
 .Card-header {
   display: flex;
   align-items: center;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+
+.Heading-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .Card-subheader {
-  color: gray;
   margin-left: 10px;
-  font-weight: bold;
+  font-weight: 600;
+}
+
+.Navigation-icon {
+  font-size: 16px;
+  border: none;
+  margin: 0 7.5px;
+  color: #010101;
+  cursor: pointer;
+  transition: all 300ms ease-in;
+  outline: none;
+}
+
+.Navigation-icon.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.Navigation-icon:hover {
+  transform: scale(1.1);
 }
 
 .Card-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  transition: transform 300ms ease-in;
+  /* overflow-x: auto; */
 }
 
 .Card-right {
@@ -106,12 +133,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: all 250ms ease-in;
+  min-width: calc(20% - 15px);
+  /* min-height: 300px; */
+  position: relative;
+  z-index: 1;
 }
 
 .Card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   background-color: aliceblue;
   cursor: pointer;
+  /* background-color: #010101;
+  color: #fff; */
+  cursor: pointer;
+  transform: scale(1.1);
+  z-index: 9;
+  position: relative;
 }
 
 .Card-stat {
@@ -132,7 +170,7 @@
   transition: all 0.2s ease-in;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .Card-section {
     width: 100%;
   }
@@ -153,5 +191,49 @@
 @media (max-width: 350px) {
   .Card {
     width: 100%;
+  }
+} */
+
+@media (max-width: 992px) {
+  .Card {
+    min-width: calc(25% - 15px);
+  }
+  .Card:hover {
+    transform: initial;
+  }
+  .Navigation-wrapper {
+    display: none;
+  }
+
+  .Card-container {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+}
+@media (max-width: 768px) {
+  .Card-section {
+    width: 100%;
+  }
+
+  .Card {
+    min-width: calc(50% - 15px);
+  }
+
+  .Heading-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 442px) {
+  .Card-stat {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 320px) {
+  .Card {
+    min-width: 100%;
+    margin-right: 5px;
   }
 }

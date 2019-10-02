@@ -1,24 +1,27 @@
 .Search-input {
   width: 300px;
   padding: 10px;
-  font-size: 14pt;
-  border: 1px solid lightblue;
+  font-size: 14px;
+  border: 1px solid #010101;
   outline: none;
+  color: #010101;
+  border-right: none;
+  opacity: 0.5;
+  cursor: pointer;
 }
 
-.Search-input:focus {
-  background-color: lightcyan;
+.Search-input:hover {
+  opacity: 1;
 }
 
 .Search-btn {
-  background: white;
-  border: 1px solid gray;
-  font-size: 12pt;
+  background: #010101;
+  border: 1px solid #010101;
+  color: #fff;
+  font-size: 14px;
   padding: 5px;
-}
-
-.Search-btn:hover {
-  background: lightblue;
+  transition: all 300ms ease-in;
+  cursor: pointer;
 }
 
 .Search-ava {
@@ -77,6 +80,7 @@
 @media (max-width: 600px) {
   .Search-input {
     width: 100%;
+    border-right: 1px solid #010101;
   }
 
   .Search-btn {

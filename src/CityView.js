@@ -77,11 +77,11 @@ class CityView extends Component {
       }
       return this.state.selectedCity === c.name;
     });
-
     return (
       <div
         style={{
-          display: this.props.display ? 'block' : 'none'
+          display: this.props.display ? 'block' : 'none',
+          overflow: 'hidden'
         }}
       >
         <div className="App-content flex-wrap">
@@ -107,7 +107,7 @@ class CityView extends Component {
           ))}
         </div>
 
-        <div className="App-content flex-wrap">
+        <>
           {newCities.map((c, i) => (
             <CardSection
               key={i}
@@ -117,9 +117,10 @@ class CityView extends Component {
               subheader={c.subheader}
               items={c.list}
               onClick={this.props.onClick}
+              profilesCount={c.list.length}
             />
           ))}
-        </div>
+        </>
       </div>
     );
   }

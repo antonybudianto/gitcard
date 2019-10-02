@@ -1,11 +1,67 @@
-.App {
-  background: white;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #010101;
+}
+
+.Container {
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  padding: 0 15px;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.Search-input-container form {
+  margin-top: 15px;
+}
+
+@media (min-width: 1200px) {
+  .Container {
+    width: 1200px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .Container {
+    max-width: 1170px;
+  }
+}
+
+@media (max-width: 992px) {
+  .Container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Container {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 576px) {
+  .Container {
+    max-width: 540px;
+  }
+}
+
+.App {
+  background: white;
 }
 
 .App-p {
@@ -61,14 +117,13 @@ h1 {
 
 .App-content {
   padding: 10px;
-  width: 90%;
-  margin: auto;
 }
 
 .App-footer {
   margin-bottom: 30px;
-  font-size: 11pt;
-  color: gray;
+  text-align: center;
+  padding: 30px;
+  margin-top: 100px;
 }
 
 .flex {
@@ -101,8 +156,8 @@ h1 {
 }
 
 .Card-section {
-  margin-bottom: 25px;
-  width: 50%;
+  margin: 50px 0;
+  width: 100%;
 }
 
 .Card-section.full {
@@ -110,51 +165,62 @@ h1 {
 }
 
 .Item-tag {
-  background-color: #282c34;
-  color: white;
+  background-color: #fff;
+  color: #010101;
   padding: 10px;
   margin: 2px;
-  border-radius: 5px;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.5s ease;
+  transition: all 0.5s ease-in;
+  border: 1px solid #010101;
+  min-width: 120px;
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .Item-tag {
+    text-align: center;
+    width: calc(50% - 4px);
+  }
 }
 
 .Item-tag:hover {
-  transition: background-color 0.5s ease;
-  background-color: darkslategray;
+  background-color: #010101;
+  color: #fff;
 }
 
 .Item-tag.active {
-  background-color: darkcyan;
+  color: #fff;
+  background-color: #010101;
 }
 
 .Tab {
   padding: 20px 50px;
-  background-color: dimgrey;
-  color: white;
-  border-bottom: 1px solid dimgrey;
+  background-color: #fff;
+  color: #010101;
+  border: 1px solid #010101;
   cursor: pointer;
-  transition: background-color 0.5s ease;
+  transition: all 300 ease-in;
+  width: 200px;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 600;
 }
 
 .Tab.active {
-  background-color: lightslategray;
-  border-bottom: 2px solid #61dafb;
-  transition: background-color 0.5s ease;
+  background-color: #010101;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .Tab {
+    width: 100%;
+    padding: 10px;
+  }
 }
 
 @media (max-width: 600px) {
   .App-content {
     width: auto;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
