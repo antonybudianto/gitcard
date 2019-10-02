@@ -16,7 +16,7 @@
 }
 
 .Navigation-icon {
-  font-size: 22px;
+  font-size: 16px;
   border: none;
   margin: 0 7.5px;
   color: #010101;
@@ -31,7 +31,7 @@
 }
 
 .Navigation-icon:hover {
-  transform: scale(1.5);
+  transform: scale(1.1);
 }
 .Card-container {
   display: flex;
@@ -66,11 +66,10 @@
   font-size: 16px;
   text-align: center;
   font-weight: 600;
-  min-height: 45px;
 }
 
 .Card {
-  padding: 30px 40px;
+  padding: 30px 15px 15px;
   margin: 0 7.5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: 1px solid #ddd;
@@ -106,23 +105,17 @@
   font-size: 14px;
 }
 
-.Rating {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.Rating .fa {
-  font-size: 20px;
-}
-
-.Rating .checked {
-  color: orange;
-}
-
 .Card-stat {
   font-size: 14px;
   justify-content: space-between;
+  background: #010101;
+  color: #fff;
+  margin: 15px -15px 0;
+  padding: 6px 15px;
+}
+
+.Card-stat strong {
+  font-size: 16px;
 }
 
 .Card > span > a {

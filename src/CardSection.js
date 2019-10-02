@@ -79,7 +79,7 @@ class CardSection extends React.Component {
             onClick={this.decrementSelectedIndex}
             disabled={selectedIndex === 0 ? true : false}
           >
-            &#8249;
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
           </button>
           <button
             className={`Navigation-icon ${
@@ -87,7 +87,7 @@ class CardSection extends React.Component {
             }`}
             onClick={this.incrementSelectedIndex}
           >
-            &#8250;
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
           </button>
         </div>
       ) : null;
@@ -141,29 +141,18 @@ class CardSection extends React.Component {
                         {u.node.location}
                       </div>
                     )}
-                    <div className="Rating">
-                      <span className="fa fa-star checked"></span>
-                      <span
-                        className={`fa fa-star ${i + 1 < 8 ? 'checked' : ''}`}
-                      ></span>
-                      <span
-                        className={`fa fa-star ${i + 1 < 5 ? 'checked' : ''}`}
-                      ></span>
-                      <span
-                        className={`fa fa-star ${i + 1 < 3 ? 'checked' : ''}`}
-                      ></span>
-                      <span
-                        className={`fa fa-star ${i + 1 < 2 ? 'checked' : ''}`}
-                      ></span>
-                    </div>
                     <div className="flex Card-stat">
                       <div className="flex flex-col align-center Card-stat-item">
-                        {' '}
-                        <strong>{u.node.followers.totalCount}</strong>followers
+                        <strong>{i + 1}</strong>
+                        Rank
                       </div>
                       <div className="flex flex-col align-center Card-stat-item">
                         {' '}
-                        <strong>{u.node.following.totalCount}</strong>following
+                        <strong>{u.node.followers.totalCount}</strong>Followers
+                      </div>
+                      <div className="flex flex-col align-center Card-stat-item">
+                        {' '}
+                        <strong>{u.node.following.totalCount}</strong>Following
                       </div>
                     </div>
                   </div>
