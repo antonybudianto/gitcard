@@ -10,6 +10,15 @@ class CardSection extends React.Component {
       cardsInARow: 0
     };
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.selected !== prevProps.selected) {
+      this.setState({
+        selectedIndex: 0
+      });
+    }
+  }
+
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);

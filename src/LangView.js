@@ -116,6 +116,7 @@ class LangView extends Component {
           {newLangs.map((c, i) => (
             <CardSection
               key={i}
+              selected={this.state.selectedLang}
               full={this.state.selectedLang !== ''}
               showLocation={false}
               header={`Top popular ${c.name} dev`}
