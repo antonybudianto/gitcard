@@ -80,8 +80,7 @@ class CityView extends Component {
     return (
       <div
         style={{
-          display: this.props.display ? 'block' : 'none',
-          overflow: 'hidden'
+          display: this.props.display ? 'block' : 'none'
         }}
       >
         <div className="App-content flex-wrap">
