@@ -37,9 +37,8 @@
 
 .Card-container {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   transition: transform 300ms ease-in;
-  /* overflow-x: auto; */
 }
 
 .Card-right {
@@ -76,20 +75,6 @@
   z-index: 0;
   background-color: silver;
   animation: slideIn 1s ease-in;
-}
-
-@keyframes slideIn {
-  0% {
-    left: -100%;
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.3;
-  }
-  100% {
-    left: -50%;
-    opacity: 1;
-  }
 }
 
 .Card-number {
@@ -136,7 +121,6 @@
   justify-content: center;
   transition: all 250ms ease-in;
   min-width: calc(20% - 15px);
-  /* min-height: 300px; */
   position: relative;
   z-index: 1;
 }
@@ -145,10 +129,7 @@
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   background-color: aliceblue;
   cursor: pointer;
-  /* background-color: #010101;
-  color: #fff; */
-  cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1.1) rotateY(10deg);
   z-index: 9;
   position: relative;
 }
@@ -171,29 +152,19 @@
   transition: all 0.2s ease-in;
 }
 
-/* @media (max-width: 600px) {
-  .Card-section {
-    width: 100%;
+@keyframes slideIn {
+  0% {
+    left: -100%;
+    opacity: 0;
   }
-
-  .Card-container {
-    justify-content: center;
+  50% {
+    opacity: 0.3;
   }
-
-  .Card {
-    width: 40%;
-  }
-
-  .Card-right {
-    width: 100%;
+  100% {
+    left: -50%;
+    opacity: 1;
   }
 }
-
-@media (max-width: 350px) {
-  .Card {
-    width: 100%;
-  }
-} */
 
 @media (max-width: 992px) {
   .Card {
@@ -209,6 +180,7 @@
   .Card-container {
     overflow-x: auto;
     scroll-behavior: smooth;
+    flex-wrap: nowrap;
   }
 }
 @media (max-width: 768px) {
