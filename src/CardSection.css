@@ -23,6 +23,7 @@
   cursor: pointer;
   transition: all 300ms ease-in;
   outline: none;
+  background: transparent;
 }
 
 .Navigation-icon.disabled {
