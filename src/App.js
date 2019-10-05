@@ -44,7 +44,7 @@ class App extends Component {
   };
 
   handleClick = u => {
-    window.scrollTo(0, 0);
+    window.location.href = '#searchView';
     this.setState({
       selectedUser: u
     });
@@ -53,15 +53,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <header className="App-header" id="heading">
           <h1>GitCard</h1>
           <p className="App-p">
             Discover awesome Open-source dev from <strong>Indonesia</strong>
           </p>
         </header>
         <div className="Container">
-          <SearchView selectedUser={this.state.selectedUser} />
-          <div className="App-content flex-wrap">
+          <div className="flex-wrap mt2 mb2">
             <div
               className={'Tab ' + (this.state.view === 'city' ? 'active' : '')}
               onClick={this.handleChangeCity}
@@ -86,7 +85,10 @@ class App extends Component {
             display={this.state.view === 'city'}
           />
         </div>
-        <footer className="App-content App-footer">
+        <div className="Search-container">
+          <SearchView selectedUser={this.state.selectedUser} />
+        </div>
+        <footer className="App-footer">
           <div>
             *If you're an Indonesian but living abroad, you can add "Indonesia"
             next to your profile's "Location" so you can also be queried!

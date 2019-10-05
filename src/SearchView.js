@@ -83,11 +83,11 @@ class SearchView extends Component {
   render() {
     return (
       <div>
-        <div className="App-content flex-wrap space-between">
+        <div className="flex-wrap space-between" id="searchView">
           {this.state.data !== null ? (
             <div className="Search-result-container">
               <h3>Result for {this.state.data.username}:</h3>
-              <div className="Search-result-summary flex-wrap align-center">
+              <div className="Search-result-summary flex-wrap align-center mt1 mb2">
                 <a
                   role="img"
                   rel="noopener noreferrer"
@@ -138,7 +138,7 @@ class SearchView extends Component {
               </div>
               <div className="mt2">
                 <h4>Top repository</h4>
-                <div className="Toprepo">
+                <div className="Toprepo mt1">
                   <a
                     href={`https://github.com/${this.state.data.username}/${this.state.data.top_repo.node.name}`}
                   >
@@ -196,6 +196,9 @@ class SearchView extends Component {
                 </button>
               </div>
             </form>
+            <div className="mt2">
+              <a href="#heading">Back to top</a>
+            </div>
           </div>
         </div>
       </div>
