@@ -5,6 +5,15 @@
   justify-content: space-between;
 }
 
+.Card-section {
+  margin: 20px 0;
+  width: 100%;
+}
+
+.Card-section.full {
+  width: 100%;
+}
+
 .Heading-wrapper {
   display: flex;
   align-items: center;

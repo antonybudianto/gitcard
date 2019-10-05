@@ -27,14 +27,24 @@
 .Search-ava {
   width: 100px;
   height: 100px;
+  border-radius: 50%;
 }
 
 .Search-stat {
   margin-left: 10px;
 }
 
+.Search-container {
+  padding: 50px 150px;
+  background-color: #282c34;
+}
+
+.Search-container a {
+  color: antiquewhite;
+}
+
 .Search-lang-container {
-  width: 400px;
+  width: 340px;
 }
 
 .Search-lang-item {
@@ -57,6 +67,10 @@
 .Search-result-container {
   width: 60%;
   min-height: 163px;
+  background-color: #383d48;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .Toprepo {
@@ -77,10 +91,19 @@
   padding: 10px;
 }
 
-@media (max-width: 600px) {
+.Search-input-container {
+  color: white;
+  width: 35%;
+}
+
+@media (max-width: 1000px) {
   .Search-input {
     width: 100%;
     border-right: 1px solid #010101;
+  }
+
+  .Search-container {
+    padding: 30px 10px;
   }
 
   .Search-btn {
@@ -98,6 +121,7 @@
   .Search-input-container {
     width: 100%;
     text-align: center;
+    margin-top: 20px;
   }
 
   .Search-result-summary {

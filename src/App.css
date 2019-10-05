@@ -20,6 +20,7 @@ body {
   margin-right: auto;
   overflow: hidden;
   padding: 0 15px;
+  margin-bottom: 30px;
 }
 
 strong {
@@ -86,6 +87,14 @@ h1 {
   margin-top: 10px;
 }
 
+.mb1 {
+  margin-bottom: 5px;
+}
+
+.mb2 {
+  margin-bottom: 10px;
+}
+
 .ml1 {
   margin-left: 5px;
 }
@@ -115,15 +124,11 @@ h1 {
   color: white;
 }
 
-.App-content {
-  padding: 10px;
-}
-
 .App-footer {
   margin-bottom: 30px;
   text-align: center;
   padding: 30px;
-  margin-top: 100px;
+  margin-top: 30px;
 }
 
 .flex {
@@ -153,15 +158,6 @@ h1 {
 
 .space-around {
   justify-content: space-around;
-}
-
-.Card-section {
-  margin: 50px 0;
-  width: 100%;
-}
-
-.Card-section.full {
-  width: 100%;
 }
 
 .Item-tag {
@@ -215,11 +211,5 @@ h1 {
   .Tab {
     width: 100%;
     padding: 10px;
-  }
-}
-
-@media (max-width: 600px) {
-  .App-content {
-    width: auto;
   }
 }
