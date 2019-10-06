@@ -31,36 +31,6 @@ strong {
   margin-top: 15px;
 }
 
-@media (min-width: 1200px) {
-  .Container {
-    width: 1200px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .Container {
-    max-width: 1170px;
-  }
-}
-
-@media (max-width: 992px) {
-  .Container {
-    max-width: 960px;
-  }
-}
-
-@media (max-width: 768px) {
-  .Container {
-    max-width: 720px;
-  }
-}
-
-@media (max-width: 576px) {
-  .Container {
-    max-width: 540px;
-  }
-}
-
 .App {
   background: white;
 }
@@ -172,13 +142,6 @@ h1 {
   text-align: center;
 }
 
-@media (max-width: 576px) {
-  .Item-tag {
-    text-align: center;
-    width: calc(50% - 4px);
-  }
-}
-
 .Item-tag:hover {
   background-color: #010101;
   color: #fff;
@@ -207,9 +170,49 @@ h1 {
   color: #fff;
 }
 
+@media (min-width: 1200px) {
+  .Container {
+    width: 1200px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .Container {
+    max-width: 1170px;
+  }
+}
+
+@media (max-width: 992px) {
+  .Container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Container {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 576px) {
+  .Container {
+    max-width: 540px;
+  }
+
+  .Item-tag {
+    text-align: center;
+    width: calc(50% - 4px);
+  }
+}
+
 @media (max-width: 600px) {
   .Tab {
     width: 100%;
     padding: 10px;
+  }
+
+  .Filter-container {
+    flex-wrap: nowrap;
+    overflow-x: auto;
   }
 }

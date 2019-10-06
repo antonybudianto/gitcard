@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 
 import CardSection from './CardSection';
 
@@ -64,7 +64,13 @@ class LangView extends Component {
     selectedLang: ''
   };
 
-  handleSelectLang = lang => {
+  filterRef = createRef();
+
+  handleSelectLang = (lang, e) => {
+    this.filterRef.current.scrollTo({
+      left: e.target.offsetLeft - 20,
+      behavior: 'smooth'
+    });
     this.setState({
       selectedLang: lang
     });
@@ -95,9 +101,9 @@ class LangView extends Component {
           display: this.props.display ? 'block' : 'none'
         }}
       >
-        <div className="flex-wrap">
+        <div className="flex-wrap Filter-container" ref={this.filterRef}>
           <div
-            onClick={() => this.handleSelectLang('')}
+            onClick={e => this.handleSelectLang('', e)}
             className={
               'Item-tag ' + (this.state.selectedLang === '' ? 'active' : '')
             }
@@ -107,7 +113,7 @@ class LangView extends Component {
           {langs.map((c, i) => (
             <div
               key={i}
-              onClick={() => this.handleSelectLang(c.name)}
+              onClick={e => this.handleSelectLang(c.name, e)}
               className={
                 'Item-tag ' +
                 (this.state.selectedLang === c.name ? 'active' : '')

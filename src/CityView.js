@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 
 import CardSection from './CardSection';
 import './CityView.css';
@@ -53,7 +53,13 @@ class CityView extends Component {
     selectedCity: ''
   };
 
-  handleSelectCity = city => {
+  filterRef = createRef();
+
+  handleSelectCity = (city, e) => {
+    this.filterRef.current.scrollTo({
+      left: e.target.offsetLeft - 20,
+      behavior: 'smooth'
+    });
     this.setState({
       selectedCity: city
     });
@@ -83,9 +89,9 @@ class CityView extends Component {
           display: this.props.display ? 'block' : 'none'
         }}
       >
-        <div className="flex-wrap">
+        <div className="flex-wrap Filter-container" ref={this.filterRef}>
           <div
-            onClick={() => this.handleSelectCity('')}
+            onClick={e => this.handleSelectCity('', e)}
             className={
               'Item-tag ' + (this.state.selectedCity === '' ? 'active' : '')
             }
@@ -95,7 +101,7 @@ class CityView extends Component {
           {cities.map((c, i) => (
             <div
               key={i}
-              onClick={() => this.handleSelectCity(c.name)}
+              onClick={e => this.handleSelectCity(c.name, e)}
               className={
                 'Item-tag ' +
                 (this.state.selectedCity === c.name ? 'active' : '')
