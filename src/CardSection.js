@@ -73,6 +73,13 @@ class CardSection extends React.Component {
                         {' '}
                         <strong>{u.node.following.totalCount}</strong>following
                       </div>
+                      {u.stars !== undefined && (
+                        <div className="flex flex-col align-center Card-stat-item">
+                          {' '}
+                          <strong>{u.stars}</strong>
+                          stars
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

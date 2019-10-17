@@ -4,6 +4,7 @@ import './App.css';
 import SearchView from './SearchView';
 import CityView from './CityView';
 import LangView from './LangView';
+import StarView from './StarView';
 
 class App extends Component {
   constructor(props) {
@@ -43,6 +44,12 @@ class App extends Component {
     });
   };
 
+  handleChangeStar = () => {
+    this.setState({
+      view: 'star'
+    });
+  };
+
   handleClick = u => {
     window.location.href = '#searchView';
     this.setState({
@@ -73,6 +80,12 @@ class App extends Component {
             >
               by Language
             </div>
+            <div
+              className={'Tab ' + (this.state.view === 'star' ? 'active' : '')}
+              onClick={this.handleChangeStar}
+            >
+              by Stars
+            </div>
           </div>
           <LangView
             onClick={this.handleClick}
@@ -83,6 +96,11 @@ class App extends Component {
             onClick={this.handleClick}
             data={this.state.data}
             display={this.state.view === 'city'}
+          />
+          <StarView
+            onClick={this.handleClick}
+            data={this.state.data}
+            display={this.state.view === 'star'}
           />
         </div>
         <div className="Search-container">
