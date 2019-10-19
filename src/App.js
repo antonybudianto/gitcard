@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import './App.css';
 import SearchView from './SearchView';
@@ -29,6 +29,9 @@ class App extends Component {
         this.setState({
           data: res.data
         });
+      })
+      .catch(err => {
+        console.error(err);
       });
   }
 
@@ -87,21 +90,29 @@ class App extends Component {
               by Stars
             </div>
           </div>
-          <LangView
-            onClick={this.handleClick}
-            data={this.state.data}
-            display={this.state.view === 'lang'}
-          />
-          <CityView
-            onClick={this.handleClick}
-            data={this.state.data}
-            display={this.state.view === 'city'}
-          />
-          <StarView
-            onClick={this.handleClick}
-            data={this.state.data}
-            display={this.state.view === 'star'}
-          />
+          {this.state.data !== null ? (
+            <Fragment>
+              <LangView
+                onClick={this.handleClick}
+                data={this.state.data}
+                display={this.state.view === 'lang'}
+              />
+              <CityView
+                onClick={this.handleClick}
+                data={this.state.data}
+                display={this.state.view === 'city'}
+              />
+              <StarView
+                onClick={this.handleClick}
+                data={this.state.data}
+                display={this.state.view === 'star'}
+              />
+            </Fragment>
+          ) : (
+            <div>
+              Data is being prepared, please revisit after some minutes.
+            </div>
+          )}
         </div>
         <div className="Search-container">
           <SearchView selectedUser={this.state.selectedUser} />
