@@ -18,7 +18,12 @@ class StarView extends Component {
       })
       .then(res => {
         this.setState({
-          data: res.data
+          data: res.data || []
+        });
+      })
+      .catch(() => {
+        this.setState({
+          data: []
         });
       })
       .finally(() => {
@@ -52,6 +57,9 @@ class StarView extends Component {
             profilesCount={devs.length}
           />
         </>
+        {!this.state.loading &&
+          !this.state.data.length &&
+          'Data is being prepared, please refresh the page after a while.'}
         {this.state.loading && 'This will take some time, please wait!...'}
       </div>
     );

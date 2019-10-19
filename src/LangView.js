@@ -79,7 +79,7 @@ class LangView extends Component {
     let langs = LANGS;
     const { data } = this.props;
 
-    if (data !== null) {
+    if (data) {
       langs = LANGS.map(c => {
         if (data[c.field]) {
           c.list = data[c.field].edges;

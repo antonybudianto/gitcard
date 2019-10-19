@@ -68,7 +68,7 @@ class CityView extends Component {
   render() {
     let cities = CITIES;
     const { data } = this.props;
-    if (data !== null) {
+    if (data) {
       cities = CITIES.map(c => {
         if (data[c.field]) {
           c.list = data[c.field].edges;
