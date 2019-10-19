@@ -211,6 +211,9 @@
   .Card-stat {
     justify-content: space-around;
   }
+  .Card-right {
+    width: 100%;
+  }
 }
 
 @media (max-width: 320px) {
