@@ -58,6 +58,8 @@
 .Card-name {
   font-size: 11pt;
   text-align: center;
+  background: white;
+  border-radius: 50px;
 }
 
 .Card-img-wrapper {
