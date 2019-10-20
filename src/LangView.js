@@ -133,7 +133,6 @@ class LangView extends Component {
               subheader={c.subheader}
               items={c.list}
               onClick={this.props.onClick}
-              profilesCount={c.list.length}
             />
           ))}
         </>

@@ -17,11 +17,25 @@
 .Heading-wrapper {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .Card-subheader {
   margin-left: 10px;
   font-weight: 600;
+  font-size: 11pt;
+}
+
+.Card-toggle {
+  border: 1px solid gray;
+  padding: 2px 15px;
+  display: none;
+}
+
+.Card-toggle:active,
+.Card-toggle--active {
+  background-color: gray;
+  color: white;
 }
 
 .Navigation-icon {
@@ -209,24 +223,43 @@
   }
 
   .Heading-wrapper {
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 }
 
 @media (max-width: 442px) {
   .Card {
     width: 100%;
-  }
-  .Card-stat {
-    justify-content: space-around;
-  }
-  .Card {
     flex-direction: row;
     justify-content: center;
   }
+
+  .Card-subheader {
+    font-size: 10pt;
+  }
+
+  .Card-stat {
+    justify-content: space-around;
+  }
+
+  .Card-toggle {
+    display: block;
+  }
+
+  .Heading-wrapper {
+    width: 100%;
+  }
+
   .Card .Card-right {
     width: 60%;
+  }
+
+  .Card-container--grid {
+    flex-wrap: nowrap;
+  }
+
+  .Card-container--grid .Card-right {
+    width: 100%;
   }
 }
 

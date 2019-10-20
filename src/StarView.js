@@ -53,7 +53,6 @@ class StarView extends Component {
             subheader={'>= 100 followers, updated biweekly'}
             items={devs}
             onClick={this.props.onClick}
-            profilesCount={devs.length}
           />
         </>
         {!this.state.loading &&
