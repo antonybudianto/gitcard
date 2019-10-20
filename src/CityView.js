@@ -116,7 +116,6 @@ class CityView extends Component {
           {newCities.map((c, i) => (
             <CardSection
               key={i}
-              selected={this.state.selectedCity}
               full={this.state.selectedCity !== ''}
               showLocation={false}
               header={`Top popular ${c.name} dev`}

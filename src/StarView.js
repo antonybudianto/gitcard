@@ -47,7 +47,6 @@ class StarView extends Component {
       >
         <>
           <CardSection
-            selected={this.state.selectedCity}
             full={this.state.selectedCity !== ''}
             showLocation={false}
             header={`Top popular dev`}
