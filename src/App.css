@@ -186,6 +186,9 @@ h1 {
   .Container {
     max-width: 960px;
   }
+  .Tab-container {
+    font-size: 10pt;
+  }
 }
 
 @media (max-width: 768px) {

@@ -70,7 +70,7 @@ class App extends Component {
           </p>
         </header>
         <div className="Container">
-          <div className="flex mt2 mb2">
+          <div className="Tab-container flex mt2 mb2">
             <div
               className={'Tab ' + (this.state.view === 'city' ? 'active' : '')}
               onClick={this.handleChangeCity}
