@@ -146,6 +146,11 @@
 .Card-stat {
   color: gray;
   font-size: 10pt;
+  margin-top: 5px;
+  flex-wrap: wrap;
+}
+
+.Card-stat-item {
   margin-top: 10px;
 }
 
