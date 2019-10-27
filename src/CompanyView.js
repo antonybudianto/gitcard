@@ -71,7 +71,7 @@ class CompanyView extends Component {
               'Item-tag ' + (this.state.selectedItem === '' ? 'active' : '')
             }
           >
-            All cities
+            All companies
           </div>
           {this.state.data.map((d, i) => (
             <div
