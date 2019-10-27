@@ -5,6 +5,7 @@ import SearchView from './SearchView';
 import CityView from './CityView';
 import LangView from './LangView';
 import StarView from './StarView';
+import CompanyView from './CompanyView';
 
 class App extends Component {
   constructor(props) {
@@ -53,6 +54,12 @@ class App extends Component {
     });
   };
 
+  handleChangeCompany = () => {
+    this.setState({
+      view: 'company'
+    });
+  };
+
   handleClick = u => {
     window.location.href = '#searchView';
     this.setState({
@@ -89,6 +96,14 @@ class App extends Component {
             >
               by Stars
             </div>
+            <div
+              className={
+                'Tab ' + (this.state.view === 'company' ? 'active' : '')
+              }
+              onClick={this.handleChangeCompany}
+            >
+              by Company
+            </div>
           </div>
           {this.state.data !== null ? (
             <Fragment>
@@ -106,6 +121,11 @@ class App extends Component {
                 onClick={this.handleClick}
                 data={this.state.data}
                 display={this.state.view === 'star'}
+              />
+              <CompanyView
+                onClick={this.handleClick}
+                data={this.state.data}
+                display={this.state.view === 'company'}
               />
             </Fragment>
           ) : (
