@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import CardSection from './CardSection';
+import { transformDevData } from './utils';
 
 class StarView extends Component {
   state = {
@@ -34,11 +35,7 @@ class StarView extends Component {
   }
 
   render() {
-    const devs = this.state.data.map(d => {
-      d.node = d.dev.node;
-      d.node.avatarUrl = d.avatarUrl;
-      return d;
-    });
+    const devs = transformDevData(this.state.data);
     return (
       <div
         style={{
