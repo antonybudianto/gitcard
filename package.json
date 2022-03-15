@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "http-proxy-middleware": "^0.20.0",
-    "lodash-es": "4.17.15",
+    "lodash-es": "4.17.21",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-scripts": "3.1.2"
